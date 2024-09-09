@@ -1,5 +1,5 @@
 ---
-- name: "SCORED | 1.1.1.1 | PATCH | Ensure mounting of cramfs filesystems is disabled"
+- name: "1.1.1.1 | PATCH | Ensure mounting of cramfs filesystems is disabled"
   lineinfile:
       dest: /etc/modprobe.d/CIS.conf
       regexp: "^(#)?install cramfs(\\s|$)"
@@ -13,13 +13,12 @@
       - ubuntu2004cis_rule_1_1_1_1
   tags:
       - level1
-      - scored
       - patch
       - cramfs
       - filesystems
       - rule_1.1.1.1
 
-- name: "SCORED | 1.1.1.1 | PATCH | Remove cramfs module"
+- name: "1.1.1.1 | PATCH | Remove cramfs module"
   modprobe:
       name: cramfs
       state: absent
@@ -28,13 +27,12 @@
       - not ubuntu2004cis_skip_for_travis
   tags:
       - level1
-      - scored
       - patch
       - cramfs
       - filesystems
       - rule_1.1.1.1
 
-- name: "SCORED | 1.1.1.2 | PATCH | Ensure mounting of freevxfs filesystems is disabled"
+- name: "1.1.1.2 | PATCH | Ensure mounting of freevxfs filesystems is disabled"
   lineinfile:
       dest: /etc/modprobe.d/CIS.conf
       regexp: "^(#)?install freevxfs"
@@ -45,13 +43,12 @@
       - ubuntu2004cis_rule_1_1_1_2
   tags:
       - level1
-      - scored
       - patch
       - freevxfs
       - filesystems
       - rule_1.1.1.2
 
-- name: "SCORED | 1.1.1.2 | PATCH | Remove freevxfs module"
+- name: "1.1.1.2 | PATCH | Remove freevxfs module"
   modprobe:
       name: freevxfs
       state: absent
@@ -60,13 +57,12 @@
       - not ubuntu2004cis_skip_for_travis
   tags:
       - level1
-      - scored
       - patch
       - freevxfs
       - filesystems
       - rule_1.1.1.2
 
-- name: "SCORED | 1.1.1.3 | PATCH | Ensure mounting of jffs2 filesystems is disabled"
+- name: "1.1.1.3 | PATCH | Ensure mounting of jffs2 filesystems is disabled"
   lineinfile:
       dest: /etc/modprobe.d/CIS.conf
       regexp: "^(#)?install jffs2(\\s|$)"
@@ -77,13 +73,12 @@
       - ubuntu2004cis_rule_1_1_1_3
   tags:
       - level1
-      - scored
       - patch
       - jffs2
       - filesystems
       - rule_1.1.1.3
 
-- name: "SCORED | 1.1.1.3 | PATCH | Remove jffs2 module"
+- name: "1.1.1.3 | PATCH | Remove jffs2 module"
   modprobe:
       name: jffs2
       state: absent
@@ -92,13 +87,12 @@
       - not ubuntu2004cis_skip_for_travis
   tags:
       - level1
-      - scored
       - patch
       - jffs2
       - filesystems
       - rule_1.1.1.3
 
-- name: "SCORED | 1.1.1.4 | PATCH | Ensure mounting of hfs filesystems is disabled"
+- name: "1.1.1.4 | PATCH | Ensure mounting of hfs filesystems is disabled"
   lineinfile:
       dest: /etc/modprobe.d/CIS.conf
       regexp: "^(#)?install hfs(\\s|$)"
@@ -109,13 +103,12 @@
       - ubuntu2004cis_rule_1_1_1_4
   tags:
       - level1
-      - scored
       - patch
       - hfs
       - filesystems
       - rule_1.1.1.4
 
-- name: "SCORED | 1.1.1.4 | PATCH | Remove hfs module"
+- name: "1.1.1.4 | PATCH | Remove hfs module"
   modprobe:
       name: hfs
       state: absent
@@ -124,13 +117,12 @@
       - not ubuntu2004cis_skip_for_travis
   tags:
       - level1
-      - scored
       - patch
       - hfs
       - filesystems
       - rule_1.1.1.4
 
-- name: "SCORED | 1.1.1.5 | PATCH | Ensure mounting of hfsplus filesystems is disabled"
+- name: "1.1.1.5 | PATCH | Ensure mounting of hfsplus filesystems is disabled"
   lineinfile:
       dest: /etc/modprobe.d/CIS.conf
       regexp: "^(#)?install hfsplus(\\s|$)"
@@ -141,13 +133,12 @@
       - ubuntu2004cis_rule_1_1_1_5
   tags:
       - level1
-      - scored
       - patch
       - hfsplus
       - filesystems
       - rule_1.1.1.5
 
-- name: "SCORED | 1.1.1.5 | PATCH | Remove hfsplus module"
+- name: "1.1.1.5 | PATCH | Remove hfsplus module"
   modprobe:
       name: hfsplus
       state: absent
@@ -156,13 +147,12 @@
       - not ubuntu2004cis_skip_for_travis
   tags:
       - level1
-      - scored
       - patch
       - hfsplus
       - filesystems
       - rule_1.1.1.5
 
-- name: "NOTSCORED | 1.1.1.6 | PATCH | Ensure mounting of squashfs filesystems is disabled"
+- name: "1.1.1.6 | PATCH | Ensure mounting of squashfs filesystems is disabled"
   command: /bin/true
   changed_when: false
   when:
@@ -176,7 +166,7 @@
       - rule_1.1.1.6
       - notimplemented
 
-- name: "SCORED | 1.1.1.7 | PATCH | Ensure mounting of udf filesystems is disabled"
+- name: "1.1.1.7 | PATCH | Ensure mounting of udf filesystems is disabled"
   lineinfile:
       dest: /etc/modprobe.d/CIS.conf
       regexp: "^(#)?install udf(\\s|$)"
@@ -187,13 +177,12 @@
       - ubuntu2004cis_rule_1_1_1_7
   tags:
       - level1
-      - scored
       - patch
       - udf
       - filesystems
       - rule_1.1.1.7
 
-- name: "SCORED | 1.1.1.7 | PATCH | Remove udf module"
+- name: "1.1.1.7 | PATCH | Remove udf module"
   modprobe:
       name: udf
       state: absent
@@ -202,13 +191,12 @@
       - not ubuntu2004cis_skip_for_travis
   tags:
       - level1
-      - scored
       - patch
       - udf
       - filesystems
       - rule_1.1.1.7
 
-- name: "SCORED | 1.1.2 | PATCH | Ensure separate partition exists for /tmp | enable and start/restart tmp.mount"
+- name: "1.1.2.1 | PATCH | Ensure separate partition exists for /tmp | enable and start/restart tmp.mount"
   copy:
       src: "{{ tmp_mount_file[ansible_os_family] }}"
       dest: /etc/systemd/system/tmp.mount
@@ -220,15 +208,14 @@
   notify:
       - systemd restart tmp.mount
   when:
-      - ubuntu2004cis_rule_1_1_2
+      - ubuntu2004cis_rule_1_1_2_1
       - not ubuntu2004cis_skip_for_travis
   tags:
       - level1
-      - scored
       - patch
-      - rule_1.1.2
+      - rule_1.1.2.1
 
-- name: "SCORED | 1.1.2 | PATCH | Ensure separate partition exists for /tmp | enable and start/restart tmp.mount"
+- name: "1.1.2.1 | PATCH | Ensure separate partition exists for /tmp | enable and start/restart tmp.mount"
   systemd:
       name: tmp.mount
       daemon_reload: yes
@@ -236,17 +223,16 @@
       masked: no
       state: started
   when:
-      - ubuntu2004cis_rule_1_1_2
+      - ubuntu2004cis_rule_1_1_2_1
       - not ubuntu2004cis_skip_for_travis
   tags:
       - level1
-      - scored
       - patch
-      - rule_1.1.2
+      - rule_1.1.2.1
 
-- name: "SCORED | 1.1.3 | PATCH | Ensure nodev option set on /tmp partition\n
-        SCORED | 1.1.4 | PATCH | Ensure nosuid option set on /tmp partition\n
-        SCORED | 1.1.5 | PATCH | Ensure noexec option set on /tmp partition\n
+- name: "1.1.2.2 | PATCH | Ensure nodev option set on /tmp partition\n
+        1.1.2.3 | PATCH | Ensure noexec option set on /tmp partition\n
+        1.1.2.4 | PATCH | Ensure nosuid option set on /tmp partition\n
         | drop custom tmp.mount"
   ini_file:
       path: "{{ item }}"
@@ -260,42 +246,18 @@
   notify:
       - systemd restart tmp.mount
   when:
-      - ubuntu2004cis_rule_1_1_3
-      - ubuntu2004cis_rule_1_1_4
-      - ubuntu2004cis_rule_1_1_5
+      - ubuntu2004cis_rule_1_1_2_2
+      - ubuntu2004cis_rule_1_1_2_3
+      - ubuntu2004cis_rule_1_1_2_4
   tags:
       - level1
-      - scored
+      - scoredtem
       - patch
-      - rule_1.1.3
-      - rule_1.1.4
-      - rule_1.1.5
+      - rule_1.1.2.2
+      - rule_1.1.2.3
+      - rule_1.1.2.4
 
-- name: "SCORED | 1.1.6 | PATCH | Ensure /dev/shm is configured\n
-        SCORED | 1.1.7 | PATCH | Ensure nodev option set on /dev/shm partition\n
-        SCORED | 1.1.8 | PATCH | Ensure nosuid option set on /dev/shm partition\n
-        SCORED | 1.1.9 | PATCH | Ensure noexec option set on /dev/shm partition"
-  mount:
-      name: /dev/shm
-      src: tmpfs
-      state: mounted
-      fstype: tmpfs
-      opts: "defaults,nodev,nosuid,noexec"
-  when:
-      - ubuntu2004cis_rule_1_1_6
-      - ubuntu2004cis_rule_1_1_7
-      - ubuntu2004cis_rule_1_1_8
-      - ubuntu2004cis_rule_1_1_9
-  tags:
-      - level1
-      - scored
-      - patch
-      - rule_1.1.6
-      - rule_1.1.7
-      - rule_1.1.8
-      - rule_1.1.9
-
-- name: "SCORED | 1.1.10 | PATCH | Ensure separate partition exists for /var"
+- name: "1.1.3.1 | PATCH | Ensure separate partition exists for /var"
   shell: mount | grep "on /var "
   register: var_mounted
   changed_when: false
@@ -303,15 +265,34 @@
   args:
       warn: false
   when:
-      - ubuntu2004cis_rule_1_1_10
+      - ubuntu2004cis_rule_1_1_3_1
   tags:
       - level2
-      - scored
       - patch
-      - rule_1.1.10
+      - rule_1.1.3.1
       - skip_ansible_lint
 
-- name: "SCORED | 1.1.11 | PATCH | Ensure separate partition exists for /var/tmp"
+- name: "1.1.3.2 | PATCH | Ensure nodev option set on /var partition\n
+        1.1.3.3 | PATCH | Ensure nosuid option set on /var partition"
+  mount:
+      name: /var
+      src: "{{ item.device }}"
+      state: mounted
+      fstype: "{{ item.fstype }}"
+      opts: "defaults, rw, nosuid, nodev, noexec, realtime 0 0"
+  when:
+      - ubuntu2004cis_rule_1_1_3_2
+      - ubuntu2004cis_rule_1_1_3_3
+      - item.mount == "/var"
+  with_items:
+      - "{{ ansible_mounts }}"
+  tags:
+      - level1
+      - patch
+      - rule_1.1.3.2
+      - rule_1.1.3.3
+
+- name: "1.1.4.1 | PATCH | Ensure separate partition exists for /var/tmp"
   shell: mount | grep "on /var/tmp "
   register: var_tmp_mounted
   changed_when: false
@@ -319,17 +300,16 @@
   args:
       warn: false
   when:
-      - ubuntu2004cis_rule_1_1_11
+      - ubuntu2004cis_rule_1_1_4_1
   tags:
       - level2
-      - scored
       - patch
-      - rule_1.1.11
+      - rule_1.1.4.1
       - skip_ansible_lint
 
-- name: "SCORED | 1.1.12 | PATCH | Ensure nodev option set on /var/tmp partition\n
-        SCORED | 1.1.13 | PATCH | Ensure nosuid option set on /var/tmp partition\n
-        SCORED | 1.1.14 | PATCH | Ensure noexec option set on /var/tmp partition"
+- name: "1.1.4.2 | PATCH | Ensure nodev option set on /var/tmp partition\n
+        1.1.4.3 | PATCH | Ensure nosuid option set on /var/tmp partition\n
+        1.1.4.4| PATCH | Ensure noexec option set on /var/tmp partition"
   mount:
       name: /var/tmp
       src: "{{ ubuntu2004cis_vartmp['source'] }}"
@@ -338,18 +318,17 @@
       opts: "{{ ubuntu2004cis_vartmp['opts'] }}"
   when:
       - ubuntu2004cis_vartmp['enabled'] == 'yes'
-      - ubuntu2004cis_rule_1_1_12
-      - ubuntu2004cis_rule_1_1_13
-      - ubuntu2004cis_rule_1_1_14
+      - ubuntu2004cis_rule_1_1_4_2
+      - ubuntu2004cis_rule_1_1_4_3
+      - ubuntu2004cis_rule_1_1_4_4
   tags:
       - level1
-      - scored
       - patch
-      - rule_1.1.12
-      - rule_1.1.13
-      - rule_1.1.14
+      - rule_1.1.4.2
+      - rule_1.1.4.3
+      - rule_1.1.4.4
 
-- name: "SCORED | 1.1.15 | PATCH | Ensure separate partition exists for /var/log"
+- name: "1.1.5.1 | PATCH | Ensure separate partition exists for /var/log"
   shell: mount | grep "on /var/log "
   register: var_log_mounted
   changed_when: false
@@ -357,15 +336,37 @@
   args:
       warn: false
   when:
-      - ubuntu2004cis_rule_1_1_15
+      - ubuntu2004cis_rule_1_1_5_1
   tags:
       - level2
-      - scored
       - patch
-      - rule_1.1.15
+      - rule_1.1.5.1
       - skip_ansible_lint
 
-- name: "SCORED | 1.1.16 | PATCH | Ensure separate partition exists for /var/log/audit"
+- name: "1.1.5.2 | PATCH | Ensure nodev option set on /var/log partition\n
+        1.1.5.3 | PATCH | Ensure nosuid option set on /var/log partition\n
+        1.1.5.4| PATCH | Ensure noexec option set on /var/log partition"
+  mount:
+      name: /var/log
+      src: "{{ item.device }}"
+      state: mounted
+      fstype: "{{ item.fstype }}"
+      opts: "defaults, rw, nosuid, nodev, noexec, realtime 0 0"
+  when:
+      - ubuntu2004cis_rule_1_1_5_2
+      - ubuntu2004cis_rule_1_1_5_3
+      - ubuntu2004cis_rule_1_1_5_4
+      - item.mount == "/var/log"
+  with_items:
+      - "{{ ansible_mounts }}"
+  tags:
+      - level1
+      - patch
+      - rule_1.1.5.2
+      - rule_1.1.5.3
+      - rule_1.1.5.4
+
+- name: "1.1.6.1 | PATCH | Ensure separate partition exists for /var/log/audit"
   shell: mount | grep "on /var/log/audit "
   register: var_log_audit_mounted
   changed_when: false
@@ -373,15 +374,37 @@
   args:
       warn: false
   when:
-      - ubuntu2004cis_rule_1_1_16
+      - ubuntu2004cis_rule_1_1_6_1
   tags:
       - level2
-      - scored
       - patch
-      - rule_1.1.16
+      - rule_1.1.6.1
       - skip_ansible_lint
 
-- name: "SCORED | 1.1.17 | PATCH | Ensure separate partition exists for /home"
+- name: "1.1.6.2 | PATCH | Ensure nodev option set on /var/log/audit partition\n
+        1.1.6.3 | PATCH | Ensure nosuid option set on /var/log/audit partition\n
+        1.1.6.4| PATCH | Ensure noexec option set on /var/log/audit partition"
+  mount:
+      name: /var/log/audit
+      src: "{{ item.device }}"
+      state: mounted
+      fstype: "{{ item.fstype }}"
+      opts: "defaults, rw, nosuid, nodev, noexec, realtime 0 0"
+  when:
+      - ubuntu2004cis_rule_1_1_6_2
+      - ubuntu2004cis_rule_1_1_6_3
+      - ubuntu2004cis_rule_1_1_6_4
+      - item.mount == "/var/log/audit"
+  with_items:
+      - "{{ ansible_mounts }}"
+  tags:
+      - level1
+      - patch
+      - rule_1.1.6.2
+      - rule_1.1.6.3
+      - rule_1.1.6.4
+
+- name: "1.1.7.1 | PATCH | Ensure separate partition exists for /home"
   shell: mount | grep "on /home "
   register: home_mounted
   changed_when: false
@@ -389,15 +412,14 @@
   args:
       warn: false
   when:
-      - ubuntu2004cis_rule_1_1_17
+      - ubuntu2004cis_rule_1_1_7_1
   tags:
       - level2
-      - scored
       - patch
-      - rule_1.1.17
+      - rule_1.1.7.1
       - skip_ansible_lint
 
-- name: "SCORED | 1.1.18 | PATCH | Ensure nodev option set on /home partition"
+- name: "1.1.7.2 | PATCH | Ensure nodev option set on /home partition"
   mount:
       name: "/home"
       src: "{{ item.device }}"
@@ -405,84 +427,66 @@
       fstype: "{{ item.fstype }}"
       opts: "nodev"
   when:
-      - ubuntu2004cis_rule_1_1_18
+      - ubuntu2004cis_rule_1_1_7_2
       - item.mount == "/home"
   with_items:
       - "{{ ansible_mounts }}"
   tags:
-      - scored
       - level1
       - patch
-      - rule_1.1.18
+      - rule_1.1.7.2
 
-- name: "NOTSCORED | 1.1.19 | PATCH | Ensure nodev option set on removable media partitions"
-  command: /bin/true
-  changed_when: false
+- name: "1.1.7.3 | PATCH | Ensure nosuid option set on /home partition"
+  mount:
+      name: "/home"
+      src: "{{ item.device }}"
+      state: mounted
+      fstype: "{{ item.fstype }}"
+      opts: "nosuid"
   when:
-      - ubuntu2004cis_rule_1_1_19
+      - ubuntu2004cis_rule_1_1_7_3
+      - item.mount == "/home"
+  with_items:
+      - "{{ ansible_mounts }}"
   tags:
       - level1
-      - notscored
       - patch
-      - rule_1.1.19
-      - notimplemented
+      - rule_1.1.7.3
 
-- name: "NOTSCORED | 1.1.20 | PATCH | Ensure nosuid option set on removable media partitions"
-  command: /bin/true
-  changed_when: false
+- name: "1.1.8.1 | PATCH | Ensure nodev option set on /dev/shm partition\n
+        1.1.8.2 | PATCH | Ensure noexec option set on /dev/shm partition\n
+        1.1.8.3 | PATCH | Ensure nosuid option set on /dev/shm partition"
+  mount:
+      name: /dev/shm
+      src: tmpfs
+      state: mounted
+      fstype: tmpfs
+      opts: "defaults,rw,nosuid,nodev,noexec,relatime 0 0"
   when:
-      - ubuntu2004cis_rule_1_1_20
+      - ubuntu2004cis_rule_1_1_8_1
+      - ubuntu2004cis_rule_1_1_8_2
+      - ubuntu2004cis_rule_1_1_8_3
   tags:
       - level1
-      - notscored
       - patch
-      - rule_1.1.20
-      - notimplemented
+      - rule_1.1.8.1
+      - rule_1.1.8.2
+      - rule_1.1.8.3
 
-- name: "NOTSCORED | 1.1.21 | PATCH | Ensure noexec option set on removable media partitions"
-  command: /bin/true
-  changed_when: false
-  when:
-      - ubuntu2004cis_rule_1_1_21
-  tags:
-      - level1
-      - notscored
-      - patch
-      - rule_1.1.21
-      - notimplemented
-
-- name: "SCORED | 1.1.22 | PATCH | Ensure sticky bit is set on all world-writable directories"
-  shell: |
-      set -o pipefail;
-      df --local -P | awk {'if (NR!=1) print $6'} | xargs -I '{}' find '{}' -xdev -type d -perm -0002 2>/dev/null | xargs chmod a+t
-  args:
-      executable: /bin/bash
-  changed_when: false
-  failed_when: false
-  when:
-      - ubuntu2004cis_rule_1_1_22
-      # - sticky_bit_on_worldwritable_dirs_audit.rc == '0'
-  tags:
-      - level1
-      - scored
-      - patch
-      - rule_1.1.22
-
-- name: "SCORED | 1.1.23 | PATCH | Disable Automounting"
+- name: "1.1.9 | PATCH | Disable Automounting"
   service:
       name: autofs
       enabled: false
   when:
       - not ubuntu2004cis_allow_autofs
       - autofs_service_status.stdout == "loaded"
-      - ubuntu2004cis_rule_1_1_23
+      - ubuntu2004cis_rule_1_1_9
   tags:
       - level1
-      - scored
       - patch
-      - rule_1.1.23
+      - rule_1.1.9
 
-- name: "SCORED | 1.1.24 | PATCH | Disable USB Storage"
+- name: "1.1.10 | PATCH | Disable USB Storage"
   lineinfile:
       dest: /etc/modprobe.d/CIS.conf
       regexp: "^(#)?install usb-storage(\\s|$)"
@@ -490,118 +494,30 @@
       state: present
       create: true
   when:
-      - ubuntu2004cis_rule_1_1_24
+      - ubuntu2004cis_rule_1_1_10
   tags:
       - level1
-      - scored
       - patch
       - udf
       - filesystems
-      - rule_1.1.24
+      - rule_1.1.10
 
-- name: "SCORED | 1.1.24 | PATCH | Remove usb-storage module"
-  modprobe:
-      name: usb-storage
-      state: absent
-  when:
-      - ubuntu2004cis_rule_1_1_24
-      - not ubuntu2004cis_skip_for_travis
-  tags:
-      - level1
-      - scored
-      - patch
-      - usb
-      - filesystems
-      - rule_1.1.24
-
-- name: "NOTSCORED | 1.2.1 | PATCH | Ensure package manager repositories are configured"
-  command: /bin/true
-  changed_when: false
-  when:
-      - ubuntu2004cis_rule_1_2_1
-  tags:
-      - level1
-      - notscored
-      - patch
-      - rule_1.2.1
-      - notimplemented
-
-- name: "NOTSCORED | 1.2.2 | PATCH | Ensure GPG keys are configured"
-  command: /bin/true
-  changed_when: false
-  when:
-      - ubuntu2004cis_rule_1_2_2
-  tags:
-      - level1
-      - notscored
-      - patch
-      - rule_1.2.2
-      - notimplemented
-
-- name: "SCORED | 1.3.1 | PATCH | Ensure sudo is installed"
-  apt:
-      name:
-          - sudo
-      state: present
-      install_recommends: false
-  when:
-      - ubuntu2004cis_rule_1_3_1
-  tags:
-      - level1
-      - scored
-      - sudo
-      - patch
-      - rule_1.3.1
-
-- name: "SCORED | 1.3.2 | PATCH | Ensure sudo commands use pty"
-  lineinfile:
-      dest: /etc/sudoers
-      state: present
-      regexp: '^Defaults use_pty'
-      line: 'Defaults use_pty'
-      validate: 'visudo -cf %s'
-  when:
-      - ubuntu2004cis_rule_1_3_2
-  tags:
-      - level1
-      - scored
-      - sudo
-      - patch
-      - rule_1.3.2
-
-- name: "SCORED | 1.3.3 | PATCH | Ensure sudo log file exists"
-  lineinfile:
-      dest: /etc/sudoers
-      state: present
-      regexp: '^Defaults logfile.*'
-      line: 'Defaults logfile="/var/log/sudo.log"'
-      validate: 'visudo -cf %s'
-  when:
-      - ubuntu2004cis_rule_1_3_3
-  tags:
-      - level1
-      - scored
-      - sudo
-      - patch
-      - rule_1.3.3
-
-- name: "SCORED | 1.4.1 | PATCH | Ensure AIDE is installed (install nullmailer instead of postfix)"
+- name: "1.2.1 | PATCH | Ensure AIDE is installed (install nullmailer instead of postfix)"
   apt:
       name:
           - nullmailer
       state: present
       install_recommends: false
   when:
-      - ubuntu2004cis_rule_1_4_1
+      - ubuntu2004cis_rule_1_2_1
       - not postfix_installed.rc == 0
   tags:
       - level1
-      - scored
       - aide
       - patch
-      - rule_1.4.1
+      - rule_1.2.1
 
-- name: "SCORED | 1.4.1 | PATCH | Ensure AIDE is installed"
+- name: "1.2.1 | PATCH | Ensure AIDE is installed"
   apt:
       name:
           - aide
@@ -609,52 +525,48 @@
       state: present
       install_recommends: false
   when:
-      - ubuntu2004cis_rule_1_4_1
+      - ubuntu2004cis_rule_1_2_1
   tags:
       - level1
-      - scored
       - aide
       - patch
-      - rule_1.4.1
+      - rule_1.2.1
 
-- name: "SCORED | 1.4.1 | PATCH | Stat AIDE DB"
+- name: "1.2.1 | PATCH | Stat AIDE DB"
   stat: path=/var/lib/aide/aide.db
   register: aide_db
   tags:
       - level1
-      - scored
       - aide
       - patch
-      - rule_1.4.1
+      - rule_1.2.1
 
-- name: "SCORED | 1.4.1 | PATCH | Init AIDE | This may take a LONG time"
+- name: "1.2.1 | PATCH | Init AIDE | This may take a LONG time"
   command: /usr/sbin/aideinit
   args:
       creates: /var/lib/aide/aide.db
   when:
       - ubuntu2004cis_config_aide
-      - ubuntu2004cis_rule_1_4_1
+      - ubuntu2004cis_rule_1_2_1
       - not aide_db.stat.exists
       - not ubuntu2004cis_skip_for_travis
   tags:
       - level1
-      - scored
       - aide
       - patch
-      - rule_1.4.1
+      - rule_1.2.1
 
-- name: "SCORED | 1.4.1 | PATCH | Stat AIDE daily cron"
+- name: "1.2.1 | PATCH | Stat AIDE daily cron"
   stat: path=/etc/cron.daily/aide
   register: aide_daily_cron
   tags:
     - level1
-    - scored
     - aide
     - file_integrity
     - patch
-    - rule_1.4.2
+    - rule_1.2.1
 
-- name: "SCORED | 1.4.2 | PATCH | Ensure filesystem integrity is regularly checked"
+- name: "1.2.2 | PATCH | Ensure filesystem integrity is regularly checked"
   cron:
       name: Run AIDE integrity check weekly
       cron_file: "{{ ubuntu2004cis_aide_cron['cron_file'] }}"
@@ -666,17 +578,52 @@
       weekday: "{{ ubuntu2004cis_aide_cron['aide_weekday'] | default('0') }}"
       job: "{{ ubuntu2004cis_aide_cron['aide_job'] }}"
   when:
-      - ubuntu2004cis_rule_1_4_2
+      - ubuntu2004cis_rule_1_2_2
       - not aide_daily_cron.stat.exists
   tags:
       - level1
-      - scored
       - aide
       - file_integrity
       - patch
-      - rule_1.4.2
+      - rule_1.2.2
 
-- name: "SCORED | 1.5.1 | PATCH | Ensure bootloader password is set - generate password"
+- name: "1.3.1 | PATCH | Ensure updates, patches, and additional security software are installed"
+  apt:
+      upgrade: dist
+  when:
+      - ubuntu2004cis_apply_upgrades
+  tags:
+      - level1
+      - notscored
+      - patch
+      - rule_1.3.1
+      - skip_ansible_lint
+
+- name: "1.3.2 | PATCH | Ensure package manager repositories are configured"
+  command: /bin/true
+  changed_when: false
+  when:
+      - ubuntu2004cis_rule_1_3_2
+  tags:
+      - level1
+      - notscored
+      - patch
+      - rule_1.3.2
+      - notimplemented
+
+- name: "1.3.3 | PATCH | Ensure GPG keys are configured"
+  command: /bin/true
+  changed_when: false
+  when:
+      - ubuntu2004cis_rule_1_3_3
+  tags:
+      - level1
+      - notscored
+      - patch
+      - rule_1.3.3
+      - notimplemented
+
+- name: "1.4.1 | PATCH | Ensure bootloader password is set - generate password"
   shell: "set -o pipefail;
         if [ '{{ ubuntu2004cis_bootloader_password }}' == 'random' ];
         then PASSWORD=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c12); else PASSWORD='{{ ubuntu2004cis_bootloader_password }}';
@@ -687,15 +634,14 @@
       executable: /bin/bash
   when:
       - ubuntu2004cis_set_boot_pass
-      - ubuntu2004cis_rule_1_5_1
+      - ubuntu2004cis_rule_1_4_1
   tags:
       - level1
-      - scored
       - grub
       - patch
-      - rule_1.5.1
+      - rule_1.4.1
 
-- name: "SCORED | 1.5.1 | PATCH | Ensure bootloader password is set - generate config"
+- name: "1.4.1 | PATCH | Ensure bootloader password is set - generate config"
   copy:
       dest: /etc/grub.d/00_password
       content: "cat << EOF\nset superusers=\"root\"\npassword_pbkdf2 root {{ grub_pass.stdout }}\nEOF"
@@ -705,15 +651,14 @@
   notify: generate new grub config
   when:
       - ubuntu2004cis_set_boot_pass and grub_pass is defined and grub_pass.stdout is defined and grub_pass.stdout | length >0
-      - ubuntu2004cis_rule_1_5_1
+      - ubuntu2004cis_rule_1_4_1
   tags:
       - level1
-      - scored
       - grub
       - patch
-      - rule_1.5.1
+      - rule_1.4.1
 
-- name: "SCORED | 1.5.1 | PATCH | Ensure bootloader password is set - disable password for system boot"
+- name: "1.4.1 | PATCH | Ensure bootloader password is set - disable password for system boot"
   replace:
       path: /etc/grub.d/10_linux
       regexp: '--class os"'
@@ -721,16 +666,15 @@
   notify: generate new grub config
   when:
       - ubuntu2004cis_set_boot_pass
-      - ubuntu2004cis_rule_1_5_1
-      - ubuntu2004cis_rule_1_5_1_disable_password
+      - ubuntu2004cis_rule_1_4_1
+      - ubuntu2004cis_rule_1_4_1_disable_password
   tags:
       - level1
-      - scored
       - grub
       - patch
-      - rule_1.5.1
+      - rule_1.4.1
 
-- name: "SCORED | 1.5.2 | PATCH | Ensure permissions on bootloader config are configured for grub.cfg"
+- name: "1.4.2 | PATCH | Ensure permissions on bootloader config are configured for grub.cfg"
   file:
       path: "/boot/grub/grub.cfg"
       owner: root
@@ -738,15 +682,14 @@
       mode: 0400
   when:
       - ansible_os_family == "Debian"
-      - ubuntu2004cis_rule_1_5_2
+      - ubuntu2004cis_rule_1_4_2
   tags:
       - level1
-      - scored
       - grub
       - patch
-      - rule_1.5.2
+      - rule_1.4.2
 
-- name: "SCORED | 1.5.2 | PATCH | Ensure permissions on bootloader config are configured for grub.conf"
+- name: "1.4.2 | PATCH | Ensure permissions on bootloader config are configured for grub.conf"
   file:
       path: "/boot/grub/grub.conf"
       owner: root
@@ -754,16 +697,15 @@
       mode: 0400
   when:
       - ansible_os_family == "Debian"
-      - ubuntu2004cis_rule_1_5_2
+      - ubuntu2004cis_rule_1_4_2
       - grub_conf.stat.exists
   tags:
       - level1
-      - scored
       - grub
       - patch
-      - rule_1.5.2
+      - rule_1.4.2
 
-- name: "SCORED | 1.5.2 | PATCH | Ensure permissions on bootloader config are configured for menu.lst"
+- name: "1.4.2 | PATCH | Ensure permissions on bootloader config are configured for menu.lst"
   file:
       path: "/boot/grub/menu.lst"
       owner: root
@@ -771,16 +713,15 @@
       mode: 0400
   when:
       - ansible_os_family == "Debian"
-      - ubuntu2004cis_rule_1_5_2
+      - ubuntu2004cis_rule_1_4_2
       - menu_lst.stat.exists
   tags:
       - level1
-      - scored
       - grub
       - patch
-      - rule_1.5.2
+      - rule_1.4.2
 
-- name: "SCORED | 1.5.3 | PATCH | Ensure authentication required for single user mode"
+- name: "1.4.3 | PATCH | Ensure authentication required for single user mode"
   shell: "set -o pipefail;
           if [ '{{ ubuntu2004cis_root_password }}' == 'random' ];
           then PASSWORD=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c24); else PASSWORD='{{ ubuntu2004cis_root_password }}';
@@ -789,31 +730,35 @@
   args:
       executable: /bin/bash
   when:
-      - ubuntu2004cis_rule_1_5_3
+      - ubuntu2004cis_rule_1_4_3
       - current_root_password.stdout | length > 0
   tags:
       - level1
-      - scored
       - patch
-      - rule_1.5.3
+      - rule_1.4.3
 
-- name: "SCORED | 1.6.1 | PATCH | Ensure XD/NX support is enabled"
-  shell: |
-      set -o pipefail;
-      dmesg | grep -E "NX|XD" | grep " active"
-  args:
-      executable: /bin/bash
-  changed_when: false
+- name: "1.5.1 | PATCH | Ensure prelink is not installed"
+  command: prelink -ua
   when:
-      - ubuntu2004cis_rule_1_6_1
-      - not ubuntu2004cis_skip_for_travis
+      - prelink_installed.rc == 0
+      - ubuntu2004cis_rule_1_5_1
   tags:
       - level1
-      - scored
       - patch
-      - rule_1.6.1
+      - rule_1.5.1
 
-- name: "SCORED | 1.6.2 | PATCH | Ensure address space layout randomization (ASLR) is enabled"
+- name: "1.5.1 | PATCH | Ensure prelink is not installed"
+  apt:
+      name: prelink
+      state: absent
+  when:
+      - ubuntu2004cis_rule_1_5_1
+  tags:
+      - level1
+      - patch
+      - rule_1.5.1
+
+- name: "1.5.2 | PATCH | Ensure address space layout randomization (ASLR) is enabled"
   sysctl:
       name: kernel.randomize_va_space
       value: "2"
@@ -822,38 +767,41 @@
       sysctl_set: true
       ignoreerrors: true
   when:
-      - ubuntu2004cis_rule_1_6_2
+      - ubuntu2004cis_rule_1_5_2
   tags:
       - level1
-      - scored
       - patch
       - sysctl
-      - rule_1.6.2
+      - rule_1.5.2
 
-- name: "SCORED | 1.6.3 | PATCH | Ensure prelink is disabled"
-  command: prelink -ua
+- name: "1.5.3 | PATCH | Ensure ptrace_scope is restricted"
+  sysctl:
+      name: kernel.yama.ptrace_scope
+      value: "1"
+      state: present
+      reload: true
+      sysctl_set: true
+      ignoreerrors: true
   when:
-      - prelink_installed.rc == 0
-      - ubuntu2004cis_rule_1_6_3
+      - ubuntu2004cis_rule_1_5_3
   tags:
       - level1
-      - scored
       - patch
-      - rule_1.6.3
+      - sysctl
+      - rule_1.5.3
 
-- name: "SCORED | 1.6.3 | PATCH | Ensure prelink is disabled"
+- name: "1.5.4 | PATCH | Ensure prelink is not installed"
   apt:
-      name: prelink
+      name: apport
       state: absent
   when:
-      - ubuntu2004cis_rule_1_6_3
+      - ubuntu2004cis_rule_1_5_4
   tags:
       - level1
-      - scored
       - patch
-      - rule_1.6.3
+      - rule_1.5.4
 
-- name: "SCORED | 1.6.4 | PATCH | Ensure core dumps are restricted"
+- name: "1.5.5 | PATCH | Ensure core dumps are restricted"
   sysctl:
       name: fs.suid_dumpable
       value: "0"
@@ -862,28 +810,26 @@
       sysctl_set: true
       ignoreerrors: true
   when:
-      - ubuntu2004cis_rule_1_6_4
+      - ubuntu2004cis_rule_1_5_5
   tags:
       - level1
-      - scored
       - sysctl
       - patch
-      - rule_1.6.4
+      - rule_1.5.5
 
-- name: "SCORED | 1.6.4 | PATCH | Ensure systemd-coredump is installed"
+- name: "1.5.5 | PATCH | Ensure systemd-coredump is installed"
   apt:
       name: systemd-coredump
       state: present
   notify: restart systemd-coredump
   when:
-      - ubuntu2004cis_rule_1_6_4
+      - ubuntu2004cis_rule_1_5_5
   tags:
       - level1
-      - scored
       - patch
-      - rule_1.6.4
+      - rule_1.5.5
 
-- name: "SCORED | 1.6.4 | PATCH | Ensure hard core 0 is set"
+- name: "1.5.5 | PATCH | Ensure hard core 0 is set"
   lineinfile:
       dest: /etc/security/limits.conf
       line: '*                hard    core            0'
@@ -893,30 +839,28 @@
       insertbefore: "# End of file"
   notify: restart systemd-coredump
   when:
-      - ubuntu2004cis_rule_1_6_4
+      - ubuntu2004cis_rule_1_5_5
   tags:
       - level1
-      - scored
       - patch
-      - rule_1.6.4
+      - rule_1.5.5
 
-- name: "SCORED | 1.7.1.1 | PATCH | Ensure AppArmor is installed"
+- name: "1.6.1.1 | PATCH | Ensure AppArmor is installed"
   apt:
       name:
           - apparmor
           - apparmor-utils
       state: present
   when:
-      - ubuntu2004cis_rule_1_7_1_1
+      - ubuntu2004cis_rule_1_6_1_1
   tags:
       - level1
-      - scored
       - patch
-      - rule_1.7.1.1
+      - rule_1.6.1.1
 
-- name: "SCORED | 1.7.1.2 | PATCH | Ensure AppArmor is enabled in the bootloader configuration"
+- name: "1.6.1.2 | PATCH | Ensure AppArmor is enabled in the bootloader configuration"
   block:
-      - name: "SCORED | 1.7.1.2 | PATCH | Ensure AppArmor is enabled in the bootloader configuration"
+      - name: "1.6.1.2 | PATCH | Ensure AppArmor is enabled in the bootloader configuration"
         replace:
             dest: /etc/default/grub
             regexp: '^(GRUB_CMDLINE_LINUX=(?!.*apparmor)\"[^\"]*)(\".*)'
@@ -924,7 +868,7 @@
         notify:
             - generate new grub config
 
-      - name: "SCORED | 1.7.1.2 | PATCH | Ensure AppArmor Security is enabled in the bootloader configuration"
+      - name: "1.6.1.2 | PATCH | Ensure AppArmor Security is enabled in the bootloader configuration"
         replace:
             dest: /etc/default/grub
             regexp: '^(GRUB_CMDLINE_LINUX=(?!.*security)\"[^\"]*)(\".*)'
@@ -932,77 +876,71 @@
         notify:
             - generate new grub config
   when:
-      - ubuntu2004cis_rule_1_7_1_2
+      - ubuntu2004cis_rule_1_6_1_2
   tags:
       - level1
-      - scored
       - patch
-      - rule_1.7.1.2
+      - rule_1.6.1.2
 
-- name: "SCORED | 1.7.1.3 | PATCH | Ensure all AppArmor Profiles are in enforce or complain mode"
+- name: "1.6.1.3 | PATCH | Ensure all AppArmor Profiles are in enforce or complain mode"
   command: /bin/true
   changed_when: false
   when:
-      - ubuntu2004cis_rule_1_7_1_3
+      - ubuntu2004cis_rule_1_6_1_3
   tags:
       - level1
-      - scored
       - patch
-      - rule_1.7.1.3
+      - rule_1.6.1.3
       - notimplemented
 
-- name: "SCORED | 1.7.1.4 | PATCH |  Ensure all AppArmor Profiles are enforcing"
+- name: "1.6.1.4 | PATCH | Ensure all AppArmor Profiles are enforcing"
   command: /bin/true
   changed_when: false
   when:
-      - ubuntu2004cis_rule_1_7_1_4
+      - ubuntu2004cis_rule_1_6_1_4
   tags:
       - level1
-      - scored
       - patch
-      - rule_1.7.1.4
+      - rule_1.6.1.4
       - notimplemented
 
-- name: "SCORED | 1.8.1.1 | PATCH | Ensure message of the day is configured properly"
+- name: "1.7.1 | PATCH | Ensure message of the day is configured properly"
   template:
       src: etc/motd.j2
       dest: /etc/motd
   when:
-      - ubuntu2004cis_rule_1_8_1_1
+      - ubuntu2004cis_rule_1_7_1
   tags:
       - level1
-      - scored
       - patch
       - banner
-      - rule_1.8.1.1
+      - rule_1.7.1
 
-- name: "SCORED | 1.8.1.2 | PATCH | Ensure local login warning banner is configured properly"
+- name: "1.7.2 | PATCH | Ensure local login warning banner is configured properly"
   template:
       src: etc/issue.j2
       dest: /etc/issue
   when:
-      - ubuntu2004cis_rule_1_8_1_2
+      - ubuntu2004cis_rule_1_7_2
   tags:
       - level1
-      - scored
       - patch
       - banner
-      - rule_1.8.1.2
+      - rule_1.7.2
 
-- name: "SCORED | 1.8.1.3 | PATCH | Ensure remote login warning banner is configured properly"
+- name: "1.7.3 | PATCH | Ensure remote login warning banner is configured properly"
   template:
       src: etc/issue.net.j2
       dest: /etc/issue.net
   when:
-      - ubuntu2004cis_rule_1_8_1_3
+      - ubuntu2004cis_rule_1_7_3
   tags:
       - level1
-      - scored
       - patch
       - banner
-      - rule_1.8.1.3
+      - rule_1.7.3
 
-- name: "SCORED | 1.8.1.4 | PATCH | Ensure permissions on /etc/motd are configured"
+- name: "1.7.4 | PATCH | Ensure permissions on /etc/motd are configured"
   file:
       dest: /etc/motd
       state: file
@@ -1010,15 +948,14 @@
       group: root
       mode: 0644
   when:
-      - ubuntu2004cis_rule_1_8_1_4
+      - ubuntu2004cis_rule_1_7_4
   tags:
       - level1
-      - scored
       - patch
       - perms
-      - rule_1.8.1.4
+      - rule_1.7.4
 
-- name: "SCORED | 1.8.1.5 | PATCH | Ensure permissions on /etc/issue are configured"
+- name: "1.7.5 | PATCH | Ensure permissions on /etc/issue are configured"
   file:
       dest: /etc/issue
       state: file
@@ -1026,15 +963,14 @@
       group: root
       mode: 0644
   when:
-      - ubuntu2004cis_rule_1_8_1_5
+      - ubuntu2004cis_rule_1_7_5
   tags:
       - level1
-      - scored
       - patch
       - perms
-      - rule_1.8.1.5
+      - rule_1.7.5
 
-- name: "SCORED | 1.8.1.6 | PATCH | Ensure permissions on /etc/issue.net are configured"
+- name: "1.7.6 | PATCH | Ensure permissions on /etc/issue.net are configured"
   file:
       dest: /etc/issue.net
       state: file
@@ -1042,27 +978,27 @@
       group: root
       mode: 0644
   when:
-      - ubuntu2004cis_rule_1_8_1_6
+      - ubuntu2004cis_rule_1_7_6
   tags:
       - level1
-      - scored
       - patch
       - perms
-      - rule_1.8.1.6
+      - rule_1.7.6
 
-- name: "NOTSCORED | 1.9 | PATCH | Ensure updates, patches, and additional security software are installed"
+- name: "1.8.1 | PATCH | Ensure GNOME Display Manager is removed"
   apt:
-      upgrade: dist
+      name: gdm3
+      state: absent
   when:
-      - ubuntu2004cis_apply_upgrades
+      - ubuntu2004cis_gui
+      - ubuntu2004cis_rule_1_8_1
   tags:
-      - level1
-      - notscored
+      - level2
       - patch
-      - rule_1.9
-      - skip_ansible_lint
+      - banner
+      - rule_1.8.1
 
-- name: "SCORED | 1.10 | PATCH | Ensure GDM login banner is configured"
+- name: "1.8.2 | PATCH | Ensure GDM login banner is configured"
   lineinfile:
       dest: "{{ item.file }}"
       regexp: "{{ item.regexp }}"
@@ -1081,10 +1017,221 @@
       - { file: '/etc/dconf/db/gdm.d/01-banner-message', regexp: 'banner-message-text', line: "banner-message-text='{{ ubuntu2004cis_warning_banner }}' " }
   when:
       - ubuntu2004cis_gui
-      - ubuntu2004cis_rule_1_10
+      - ubuntu2004cis_rule_1_8_2
   tags:
       - level1
-      - scored
       - patch
       - banner
-      - rule_1.10
+      - rule_1.8.2
+
+- name: "1.8.3 | PATCH | Ensure disable-user-list is enabled"
+  lineinfile:
+      path: /etc/gdm3/greeter.dconf-default
+      regexp: '^disable-user-list='
+      line: 'disable-user-list=true'
+      insertafter: 'banner-message-text='
+      create: true
+      owner: root
+      group: root
+      mode: 0644
+  notify: reload dconf
+  when:
+      - ubuntu2004cis_gui
+      - ubuntu2004cis_rule_1_8_3
+  tags:
+      - level1
+      - patch
+      - banner
+      - rule_1.8.3
+
+- name: "1.8.4 | PATCH | Ensure GDM screen locks when the user is idle"
+  block:
+      - name: "1.8.4 | PATCH | Ensure GDM screen locks when the user is idle | session profile"
+        lineinfile:
+            path: /etc/dconf/profile/session
+            regexp: "{{ item.regexp }}"
+            line: "{{ item.line }}"
+            insertafter: "{{ item.after | default(omit) }}"
+            loop:
+                - "{ regexp: 'user-db: user', line: 'user' }"
+                - "{ regexp: 'system-db: system-db:gdm', after: '^user-db.*' }"
+
+      - name: "1.8.4 | PATCH | Ensure GDM screen locks when the user is idle | make directory"
+        file:
+            path: "/etc/dconf/db/gdm.d"
+            owner: root
+            group: root
+            mode: 0755
+            state: directory
+        notify: reload dconf
+
+      - name: "1.8.4 | PATCH | Ensure GDM screen locks when the user is idle | session script"
+        template:
+            src: etc/dconf/db/00-screensaver.j2
+            dest: "/etc/dconf/db/gdm.d/00-screensaver"
+            owner: root
+            group: root
+            mode: '0644'
+        notify: reload dconf
+  when:
+      - ubuntu2004cis_gui
+      - ubuntu2004cis_rule_1_8_4
+  tags:
+      - level1
+      - patch
+      - banner
+      - rule_1.8.4
+
+- name: "1.8.5 | PATCH | Ensure GDM screen locks cannot be overridden"
+  block:
+      - name: "1.8.5 | PATCH | Ensure GDM screen locks cannot be overridden | make lock directory"
+        file:
+            path: "/etc/dconf/db/gdm.d/locks"
+            owner: root
+            group: root
+            mode: 0755
+            state: directory
+        notify: reload dconf
+
+      - name: "1.8.5 | PATCH | Ensure GDM screen locks cannot be overridden | make lockfile"
+        template:
+            src: etc/dconf/db/00-screensaver_lock.j2
+            dest: "/etc/dconf/db/gdm.d/locks/00-screensaver"
+            owner: root
+            group: root
+            mode: 0644
+        notify: reload dconf
+  when:
+      - ubuntu2004cis_gui
+      - ubuntu2004cis_rule_1_8_5
+  tags:
+      - level1
+      - patch
+      - banner
+      - rule_1.8.5
+
+- name: "1.8.6 | PATCH | Ensure GDM automatic mounting of removable media is disabled"
+  block:
+      - name: "1.8.6 | PATCH | Ensure GDM automatic mounting of removable media is disabled | make directory"
+        file:
+            path: "/etc/dconf/db/gdm.d"
+            owner: root
+            group: root
+            mode: 0755
+            state: directory
+        notify: reload dconf
+
+      - name: "1.8.6 | PATCH | Ensure GDM automatic mounting of removable media is disabled | session script"
+        template:
+            src: etc/dconf/db/00-media-automount.j2
+            dest: "/etc/dconf/db/gdm.d/00-media-automount"
+            owner: root
+            group: root
+            mode: '0644'
+        notify: reload dconf
+  when:
+      - ubuntu2004cis_gui
+      - ubuntu2004cis_rule_1_8_6
+  tags:
+      - level1
+      - patch
+      - banner
+      - rule_1.8.6
+
+- name: "1.8.7 | PATCH | Ensure GDM disabling automatic mounting of removable media is not overridden"
+  block:
+      - name: "1.8.7 | PATCH | Ensure GDM disabling automatic mounting of removable media is not overridden | make lock directory"
+        file:
+            path: "/etc/dconf/db/gdm.d/locks"
+            owner: root
+            group: root
+            mode: 0755
+            state: directory
+        notify: reload dconf
+
+      - name: "1.8.7 | PATCH | Ensure GDM disabling automatic mounting of removable media is not overridden | make lockfile"
+        template:
+            src: etc/dconf/db/00-automount_lock.j2
+            dest: "/etc/dconf/db/gdm.d/locks/00-automount_lock"
+            owner: root
+            group: root
+            mode: 0644
+        notify: reload dconf
+  when:
+      - ubuntu2004cis_gui
+      - ubuntu2004cis_rule_1_8_7
+  tags:
+      - level1
+      - patch
+      - banner
+      - rule_1.8.7
+
+- name: "1.8.8 | PATCH | Ensure GDM autorun-never is enabled"
+  block:
+      - name: "1.8.8 | PATCH | Ensure GDM autorun-never is enabled | make directory"
+        file:
+            path: "/etc/dconf/db/gdm.d"
+            owner: root
+            group: root
+            mode: 0755
+            state: directory
+        notify: reload dconf
+
+      - name: "1.8.8 | PATCH | Ensure GDM autorun-never is enabled | session script"
+        template:
+            src: etc/dconf/db/00-media-autorun.j2
+            dest: "/etc/dconf/db/gdm.d/00-media-autorun"
+            owner: root
+            group: root
+            mode: '0644'
+        notify: reload dconf
+  when:
+      - ubuntu2004cis_gui
+      - ubuntu2004cis_rule_1_8_8
+  tags:
+      - level1
+      - patch
+      - banner
+      - rule_1.8.8
+
+- name: "1.8.9 | PATCH | Ensure GDM autorun-never is not overridden"
+  block:
+      - name: "1.8.9 | PATCH | Ensure GDM autorun-never is not overridden | make lock directory"
+        file:
+            path: "/etc/dconf/db/gdm.d/locks"
+            owner: root
+            group: root
+            mode: 0755
+            state: directory
+        notify: reload dconf
+
+      - name: "1.8.9 | PATCH | Ensure GDM autorun-never is not overridden | make lockfile"
+        template:
+            src: etc/dconf/db/00-autorun_lock.j2
+            dest: "/etc/dconf/db/gdm.d/locks/00-autorun_lock"
+            owner: root
+            group: root
+            mode: 0644
+        notify: reload dconf
+  when:
+      - ubuntu2004cis_gui
+      - ubuntu2004cis_rule_1_8_9
+  tags:
+      - level1
+      - patch
+      - banner
+      - rule_1.8.9
+
+- name: "1.8.10 | PATCH | Ensure XDCMP is not enabled"
+  lineinfile:
+      path: /etc/gdm3/custom.conf
+      regexp: '^Enable.*=.*true'
+      state: absent
+  when:
+      - ubuntu2004cis_gui
+      - ubuntu2004cis_rule_1_8_10
+  tags:
+      - level1
+      - patch
+      - banner
+      - rule_1.8.10
