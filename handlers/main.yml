@@ -113,3 +113,13 @@
   service:
       name: systemd-journald
       state: restarted
+
+- name: restart exim4
+  ansible.builtin.systemd:
+      name: exim4
+      state: restarted
+
+- name: restart timeservice
+  ansible.builtin.systemd:
+      name: "{{ ubuntu2004cis_time_synchronization }}"
+      state: restarted
