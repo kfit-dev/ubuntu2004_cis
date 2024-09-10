@@ -384,3 +384,10 @@
   register: users_password_change_date_in_future
   changed_when: False
   check_mode: false
+
+- name: "PRELIM | 4.3.4 | Find all sudoers files."
+  ansible.builtin.shell: "find /etc/sudoers /etc/sudoers.d/ -type f ! -name '*~' ! -name '*.*'"
+  changed_when: false
+  failed_when: false
+  check_mode: false
+  register: ubuntu2004cis_sudoers_files
