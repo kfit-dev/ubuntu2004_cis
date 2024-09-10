@@ -1,22 +1,23 @@
----
-- name: "NOTSCORED | 6.1.1 | PATCH | Audit system file permissions"
-  command: /bin/true
-  changed_when: false
-  when:
-      - ubuntu2004cis_rule_6_1_1
-  tags:
-      - level2
-      - notscored
-      - patch
-      - rule_6.1.1
-      - notimplemented
-
-- name: "SCORED | 6.1.2 | PATCH | Ensure permissions on /etc/passwd are configured"
+- name: "6.1.1 | PATCH | Ensure permissions on /etc/passwd are configured"
   file:
       dest: /etc/passwd
       owner: root
       group: root
       mode: 0644
+  when:
+      - ubuntu2004cis_rule_6_1_1
+  tags:
+      - level1
+      - scored
+      - patch
+      - rule_6.1.1
+
+- name: "6.1.2 | PATCH | Ensure permissions on /etc/passwd- are configured"
+  file:
+      dest: /etc/passwd-
+      owner: root
+      group: root
+      mode: 0600
   when:
       - ubuntu2004cis_rule_6_1_2
   tags:
@@ -25,12 +26,12 @@
       - patch
       - rule_6.1.2
 
-- name: "SCORED | 6.1.3 | PATCH | Ensure permissions on /etc/gshadow- are configured"
+- name: "6.1.3 | PATCH | Ensure permissions on /etc/group are configured"
   file:
-      dest: /etc/gshadow-
+      dest: /etc/group
       owner: root
-      group: shadow
-      mode: 0640
+      group: root
+      mode: 0644
   when:
       - ubuntu2004cis_rule_6_1_3
   tags:
@@ -39,12 +40,12 @@
       - patch
       - rule_6.1.3
 
-- name: "SCORED | 6.1.4 | PATCH | Ensure permissions on /etc/shadow are configured"
+- name: "6.1.4 | PATCH | Ensure permissions on /etc/group- are configured"
   file:
-      dest: /etc/shadow
+      dest: /etc/group-
       owner: root
-      group: shadow
-      mode: 0640
+      group: root
+      mode: 0644
   when:
       - ubuntu2004cis_rule_6_1_4
   tags:
@@ -53,12 +54,12 @@
       - patch
       - rule_6.1.4
 
-- name: "SCORED | 6.1.5 | PATCH | Ensure permissions on /etc/group are configured"
+- name: "6.1.5 | PATCH | Ensure permissions on /etc/shadow are configured"
   file:
-      dest: /etc/group
+      dest: /etc/shadow
       owner: root
-      group: root
-      mode: 0644
+      group: shadow
+      mode: 0640
   when:
       - ubuntu2004cis_rule_6_1_5
   tags:
@@ -67,11 +68,11 @@
       - patch
       - rule_6.1.5
 
-- name: "SCORED | 6.1.6 | PATCH | Ensure permissions on /etc/passwd- are configured"
+- name: "6.1.6 | PATCH | Ensure permissions on /etc/shadow- are configured"
   file:
-      dest: /etc/passwd-
+      dest: /etc/shadow-
       owner: root
-      group: root
+      group: shadow
       mode: 0600
   when:
       - ubuntu2004cis_rule_6_1_6
@@ -81,12 +82,12 @@
       - patch
       - rule_6.1.6
 
-- name: "SCORED | 6.1.7 | PATCH | Ensure permissions on /etc/shadow- are configured"
+- name: "6.1.7 | PATCH | Ensure permissions on /etc/gshadow are configured"
   file:
-      dest: /etc/shadow-
+      dest: /etc/gshadow
       owner: root
       group: shadow
-      mode: 0600
+      mode: 0640
   when:
       - ubuntu2004cis_rule_6_1_7
   tags:
@@ -95,343 +96,607 @@
       - patch
       - rule_6.1.7
 
-- name: "SCORED | 6.1.8 | PATCH | Ensure permissions on /etc/group- are configured"
+- name: "6.1.8 | PATCH | Ensure permissions on /etc/gshadow- are configured"
   file:
-      dest: /etc/group-
+      dest: /etc/gshadow-
       owner: root
-      group: root
-      mode: 0644
+      group: shadow
+      mode: 0640
   when:
       - ubuntu2004cis_rule_6_1_8
   tags:
       - level1
       - scored
       - patch
-      - rule_6.1.8
+      - rule_6.1.3
 
-- name: "SCORED | 6.1.9 | PATCH | Ensure permissions on /etc/gshadow are configured"
+- name: "6.1.9 | PATCH | Ensure permissions on /etc/shells are configured"
   file:
-      dest: /etc/gshadow
+      path: /etc/shells
       owner: root
-      group: shadow
-      mode: 0640
+      group: root
+      mode: '0644'
   when:
       - ubuntu2004cis_rule_6_1_9
   tags:
       - level1
-      - scored
       - patch
       - rule_6.1.9
+      - permissions
 
-- name: "SCORED | 6.1.10 | PATCH | Ensure no world writable files exist"
-  command: /bin/true
-  changed_when: false
+- name: "6.1.10 | PATCH | Ensure permissions on /etc/opasswd are configured"
+  block:
+      - name: "6.1.10 | PATCH | Ensure permissions on /etc/opasswd are configured | stat opasswd"
+        stat:
+            path: /etc/opasswd
+        register: opasswd
+
+      - name: "6.1.10 | PATCH | Ensure permissions on /etc/opasswd are configured | opasswd"
+        file:
+            path: /etc/opasswd
+            owner: root
+            group: root
+            mode: '0600'
+            state: touch
+        when: opasswd.stat.exists
+
+      - name: "6.1.10 | PATCH | Ensure permissions on /etc/opasswd are configured | stat opasswd.old"
+        stat:
+            path: /etc/opasswd.old
+        register: opasswd_old
+
+      - name: "6.1.10 | PATCH | Ensure permissions on /etc/opasswd are configured | set opasswd.old is exists"
+        file:
+            path: /etc/opasswd.old
+            owner: root
+            group: root
+            mode: '0600'
+        when: opasswd_old.stat.exists
   when:
       - ubuntu2004cis_rule_6_1_10
   tags:
       - level1
-      - scored
       - patch
       - rule_6.1.10
-      - notimplemented
+      - permissions
 
-- name: "SCORED | 6.1.11 | PATCH | Ensure no unowned files or directories exist"
-  command: /bin/true
-  changed_when: false
+- name: "6.1.11 | PATCH | Ensure world writable files and directories are secured"
+  block:
+      - name: "6.1.11 | AUDIT | Ensure world writable files and directories are secured | Get list of world-writable files"
+        shell: find {{ item.mount }} -xdev -type f -perm -0002 -not -fstype nfs
+        changed_when: false
+        failed_when: false
+        check_mode: false
+        register: ubuntu2004cis_6_1_11_wwf
+        with_items:
+            - "{{ ansible_mounts }}"
+        loop_control:
+            label: "{{ item.mount }}"
+
+      - name: "6.1.11 | PATCH | Ensure world writable files and directories are secured | Adjust world-writable files if they exist"
+        file:
+            path: "{{ item }}"
+            mode: o-w
+        with_items:
+            - "{{ ubuntu2004cis_6_1_11_wwf.results | map(attribute='stdout_lines') | flatten  }}"
+        when: ubuntu2004cis_no_world_write_adjust
   when:
       - ubuntu2004cis_rule_6_1_11
   tags:
       - level1
-      - scored
       - patch
       - rule_6.1.11
-      - notimplemented
+      - permissions
 
-- name: "SCORED | 6.1.12 | PATCH | Ensure no ungrouped files or directories exist"
-  command: /bin/true
-  changed_when: false
+- name: "6.1.12 | PATCH | Ensure no unowned or ungrouped files or directories exist"
+  block:
+      - name: "6.1.12 | AUDIT | Ensure no unowned or ungrouped files or directories exist  | Get unowned files or directories"
+        shell: find {{ item.mount }} -xdev -nouser -not -fstype nfs
+        changed_when: false
+        failed_when: false
+        check_mode: false
+        register: ubuntu2004cis_6_1_12_no_user_items
+        with_items:
+            - "{{ ansible_mounts }}"
+        loop_control:
+            label: "{{ item.mount }}"
+
+      - name: "6.1.12 | AUDIT | Ensure no unowned or ungrouped files or directories exist  | Flatten no_user_items results for easier use"
+        set_fact:
+            ubuntu2004cis_6_1_12_no_user_items_flatten: "{{ ubuntu2004cis_6_1_12_no_user_items.results | map(attribute='stdout_lines') | flatten }}"
+
+      - name: "6.1.12 | AUDIT | Ensure no unowned or ungrouped files or directories exist  | Alert on unowned files and directories"
+        debug:
+            msg:
+                - "Warning!! You have unowned files and are configured to not auto-remediate for this task"
+                - "Please review the files/directories below and assign an owner"
+                - "{{ ubuntu2004cis_6_1_12_no_user_items_flatten }}"
+        when:
+            - not ubuntu2004cis_no_owner_adjust
+            - ubuntu2004cis_6_1_12_no_user_items_flatten | length > 0
+
+      - name: "6.1.12 | PATCH | Ensure no unowned or ungrouped files or directories exist  | Set unowned files/directories to configured owner"
+        file:
+            path: "{{ item }}"
+            owner: "{{ ubuntu2004cis_unowned_owner }}"
+        with_items:
+            - "{{ ubuntu2004cis_6_1_12_no_user_items_flatten }}"
+        when:
+            - ubuntu2004cis_no_owner_adjust
+            - ubuntu2004cis_6_1_12_no_user_items_flatten | length > 0
+
+      - name: "6.1.12 | AUDIT | Ensure no unowned or ungrouped files or directories exist  | Warn Count"
+        import_tasks:
+            file: warning_facts.yml
+        when:
+            - not ubuntu2004cis_no_owner_adjust
+            - ubuntu2004cis_6_1_12_no_user_items_flatten | length > 0
+        vars:
+            warn_control_id: '6.1.12_unowned'
+
+      - name: "6.1.12 | AUDIT | Ensure no unowned or ungrouped files or directories exist  | Get ungrouped files or directories"
+        shell: find {{ item.mount }} -xdev -nogroup -not -fstype nfs
+        changed_when: false
+        failed_when: false
+        check_mode: false
+        register: ubuntu2004cis_6_1_12_ungrouped_items
+        with_items:
+            - "{{ ansible_mounts }}"
+        loop_control:
+            label: "{{ item.mount }}"
+
+      - name: "6.1.12 | AUDIT | Ensure no unowned or ungrouped files or directories exist  | Flatten ungrouped_items results for easier use"
+        set_fact:
+            ubuntu2004cis_6_1_12_ungrouped_items_flatten: "{{ ubuntu2004cis_6_1_12_ungrouped_items.results | map(attribute='stdout_lines') | flatten }}"
+
+      - name: "6.1.12 | AUDIT | Ensure no unowned or ungrouped files or directories exist  | Alert on ungrouped files and directories"
+        debug:
+            msg:
+                - "Warning!! You have ungrouped files/directories and are configured to not auto-remediate for this task"
+                - "Please review the files/directories below and assign a group"
+                - "{{ ubuntu2004cis_6_1_12_ungrouped_items_flatten }}"
+        when:
+            - not ubuntu2004cis_no_group_adjust
+            - ubuntu2004cis_6_1_12_ungrouped_items_flatten | length > 0
+
+      - name: "6.1.12 | PATCH | Ensure no ungrouped files or directories exist | Set ungrouped files/directories to configured group"
+        file:
+            path: "{{ item }}"
+            group: "{{ ubuntu2004cis_ungrouped_group }}"
+        with_items:
+            - "{{ ubuntu2004cis_6_1_12_ungrouped_items_flatten }}"
+        when:
+            - ubuntu2004cis_no_group_adjust
+            - ubuntu2004cis_6_1_12_ungrouped_items_flatten | length > 0
   when:
       - ubuntu2004cis_rule_6_1_12
   tags:
       - level1
-      - scored
       - patch
       - rule_6.1.12
-      - notimplemented
+      - permissions
 
-- name: "NOTSCORED | 6.1.13 | PATCH | Audit SUID executables"
-  command: /bin/true
-  changed_when: false
+- name: "6.1.13 | AUDIT | Ensure SUID and SGID files are reviewed"
+  block:
+      - name: "6.1.13 | AUDIT | Ensure SUID and SGID files are reviewed | Find SUID executables"
+        shell: find {{ item.mount }} -xdev -type f -perm -4000 -not -fstype nfs
+        changed_when: false
+        failed_when: false
+        check_mode: false
+        register: ubuntu2004cis_6_1_13_suid_executables
+        with_items:
+            - "{{ ansible_mounts }}"
+        loop_control:
+            label: "{{ item.mount }}"
+
+      - name: "6.1.13 | AUDIT | Ensure SUID and SGID files are reviewed | Flatten suid_executables results for easier use"
+        set_fact:
+            ubuntu2004cis_6_1_13_suid_executables_flatten: "{{ ubuntu2004cis_6_1_13_suid_executables.results | map(attribute='stdout_lines') | flatten }}"
+
+      - name: "6.1.13 | AUDIT | Ensure SUID and SGID files are reviewed | Alert SUID executables exist"
+        debug:
+            msg:
+                - "Warning!! You have SUID executables"
+                - "The files are listed below, please confirm the integrity of these binaries"
+                - "{{ ubuntu2004cis_6_1_13_suid_executables_flatten }}"
+        when:
+            - ubuntu2004cis_6_1_13_suid_executables_flatten | length > 0
+            - not ubuntu2004cis_suid_adjust
+
+      - name: "6.1.13 | PATCH | Ensure SUID and SGID files are reviewed | Remove SUID bit"
+        file:
+            path: "{{ item }}"
+            mode: 'u-s'
+        with_items:
+            - "{{ ubuntu2004cis_6_1_13_suid_executables_flatten }}"
+        when:
+            - ubuntu2004cis_suid_adjust
+            - ubuntu2004cis_6_1_13_suid_executables_flatten | length > 0
+
+      - name: "6.1.13 | AUDIT | Ensure SUID and SGID files are reviewed | Find SGID executables"
+        shell: find {{ item }} -xdev -type f -perm -2000 -not -fstype nfs
+        changed_when: false
+        failed_when: false
+        check_mode: false
+        register: ubuntu2004cis_6_1_13_sgid_executables
+        with_items:
+            - "{{ ansible_mounts }}"
+        loop_control:
+            label: "{{ item.mount }}"
+
+      - name: "6.1.13 | AUDIT | Ensure SUID and SGID files are reviewed | Flatten sgid_executables results for easier use"
+        set_fact:
+            ubuntu2004cis_6_1_13_sgid_executables_flatten: "{{ ubuntu2004cis_6_1_13_sgid_executables.results | map(attribute='stdout_lines') | flatten }}"
+
+      - name: "6.1.13 | AUDIT | Ensure SUID and SGID files are reviewed | Alert SGID executables exist"
+        debug:
+            msg:
+                - "Warning!! You have SGID executables"
+                - "The files are listed below, please review the integrity of these binaries"
+                - "{{ ubuntu2004cis_6_1_13_sgid_executables_flatten }}"
+        when:
+            - ubuntu2004cis_6_1_13_sgid_executables_flatten | length > 0
+            - not ubuntu2004cis_sgid_adjust
+
+      - name: "6.1.13 | PATCH | Ensure SUID and SGID files are reviewed | Remove SGID bit"
+        file:
+            path: "{{ item }}"
+            mode: 'g-s'
+        with_items:
+            - "{{ ubuntu2004cis_6_1_13_sgid_executables_flatten }}"
+        when:
+            - ubuntu2004cis_sgid_adjust
+            - ubuntu2004cis_6_1_13_sgid_executables_flatten | length > 0
   when:
       - ubuntu2004cis_rule_6_1_13
   tags:
       - level1
-      - notscored
-      - patch
+      - audit
       - rule_6.1.13
-      - notimplemented
+      - permissions
 
-- name: "NOTSCORED | 6.1.14 | PATCH | Audit SGID executables"
-  command: /bin/true
-  changed_when: false
-  when:
-      - ubuntu2004cis_rule_6_1_14
-  tags:
-      - level1
-      - notscored
-      - patch
-      - rule_6.1.14
-      - notimplemented
+- name: "6.2.1 | AUDIT | Ensure accounts in /etc/passwd use shadowed passwords"
+  block:
+      - name: "6.2.1 | AUDIT | Ensure accounts in /etc/passwd use shadowed passwords | Get users not using shadowed passwords"
+        shell: awk -F':' '($2 != "x" ) { print $1}' /etc/passwd
+        changed_when: false
+        failed_when: false
+        register: ubuntu2004cis_6_2_1_nonshadowed_users
 
-- name: "SCORED | 6.2.1 | PATCH | Ensure password fields are not empty"
-  command: passwd -l {{ item }}
-  changed_when: false
-  failed_when: false
-  with_items: "{{ empty_password_accounts.stdout_lines }}"
+      - name: "6.2.1 | AUDIT | Ensure accounts in /etc/passwd use shadowed passwords | Alert on findings"
+        debug:
+            msg:
+                - "Warning!! You have users that are not using a shadowed password. Please convert the below accounts to use a shadowed password"
+                - "{{ ubuntu2004cis_6_2_1_nonshadowed_users.stdout_lines }}"
   when:
-      - empty_password_accounts.rc
       - ubuntu2004cis_rule_6_2_1
   tags:
       - level1
-      - scored
-      - patch
+      - audit
       - rule_6.2.1
+      - user_accounts
 
-- name: "SCORED | 6.2.2 | PATCH | Ensure root is the only UID 0 account"
-  command: passwd -l {{ item }}
-  changed_when: false
-  failed_when: false
-  with_items: "{{ uid_zero_accounts_except_root.stdout_lines }}"
+- name: "6.2.2 | PATCH | Ensure /etc/shadow password fields are not empty "
+  block:
+      - name: "6.2.2 | AUDIT | Ensure /etc/shadow password fields are not empty  | Find users with no password"
+        shell: awk -F":" '($2 == "" ) { print $1 }' /etc/shadow
+        changed_when: false
+        check_mode: false
+        register: ubuntu2004cis_6_2_2_empty_password_acct
+
+      - name: "6.2.2 | PATCH | Ensure /etc/shadow password fields are not empty  | Lock users with empty password"
+        user:
+            name: "{{ item }}"
+            password_lock: true
+        with_items:
+            - "{{ ubuntu2004cis_6_2_2_empty_password_acct.stdout_lines }}"
+        when: ubuntu2004cis_6_2_2_empty_password_acct.stdout | length > 0
   when:
-      - uid_zero_accounts_except_root.rc
       - ubuntu2004cis_rule_6_2_2
   tags:
       - level1
-      - scored
       - patch
       - rule_6.2.2
+      - user
+      - permissions
 
-- name: "SCORED | 6.2.3 | PATCH | Ensure root PATH Integrity"
+- name: "6.2.3 | AUDIT | Ensure all groups in /etc/passwd exist in /etc/group"
   block:
-      - name: "SCORED | 6.2.3 | PATCH | Ensure root PATH Integrity (unimplemented)"
-        command: /bin/true
+      - name: "6.2.3 | AUDIT | Ensure all groups in /etc/passwd exist in /etc/group | Check /etc/passwd entries"
+        shell: pwck -r | grep 'no group' | awk '{ gsub("[:\47]",""); print $2}'
         changed_when: false
-        tags:
-            - level1
-            - scored
-            - patch
-            - rule_6.2.3
-            - notimplemented
-
-      - name: "SCORED | 6.2.3 | PATCH | Ensure root PATH Integrity (collect paths)"
-        shell: |
-          set -o pipefail;
-          sudopath=($(grep secure_path /etc/sudoers | cut -f2 -d= |cut -f2 -d\"))
-          IFS=:
-          for i in ${sudopath[*]}
-          do
-            if [ -d "$i" ]
-              then newsudopath+=($i)
-            fi
-           done
-          echo "${newsudopath[*]}"
-        args:
-            executable: /bin/bash
-        register: fixsudo
-        changed_when: false
+        failed_when: false
         check_mode: false
-        tags:
-            - level1
-            - scored
-            - patch
-            - rule_6.2.3
+        register: ubuntu2004cis_6_2_3_passwd_gid_check
 
-      - name: "SCORED | 6.2.3 | PATCH | Ensure root PATH Integrity (fix paths)"
-        lineinfile:
-            dest: /etc/sudoers
-            regexp: "(.*secure_path=).*"
-            line: '\1"{{ fixsudo.stdout_lines[0] }}"'
-            backrefs: true
-        when:
-            - fixsudo.stdout_lines[0]
-        tags:
-            - level1
-            - scored
-            - patch
-            - rule_6.2.3
+      - name: "6.2.3 | AUDIT | Ensure all groups in /etc/passwd exist in /etc/group | Print warning about users with invalid GIDs missing GID entries in /etc/group"
+        debug:
+            msg: "Warning!! The following users have non-existent GIDs (Groups): {{ ubuntu2004cis_6_2_3_passwd_gid_check.stdout_lines | join (', ') }}"
+        when: ubuntu2004cis_6_2_3_passwd_gid_check.stdout | length > 0
   when:
       - ubuntu2004cis_rule_6_2_3
+  tags:
+      - level1
+      - audit
+      - rule_6.2.3
+      - groups
 
-- name: "SCORED | 6.2.4 | PATCH | Ensure all users' home directories exist"
-  command: /bin/true
-  changed_when: false
+- name: "6.2.4 | PATCH | Ensure shadow group is empty"
+  block:
+      - name: "6.2.4 | AUDIT | Ensure shadow group is empty | check users in group"
+        getent:
+            database: group
+            split: ':'
+            key: shadow
+
+      - name: "6.2.4 | AUDIT | Ensure shadow group is empty | check users in group"
+        debug:
+            msg: "Warning!! - You have users in the shadow group"
+        when: getent_group.shadow[2] | length > 0
   when:
       - ubuntu2004cis_rule_6_2_4
   tags:
       - level1
-      - scored
       - patch
       - rule_6.2.4
-      - notimplemented
+      - user
 
-- name: "SCORED | 6.2.5 | PATCH | Ensure users' home directories permissions are 750 or more restrictive"
-  shell: |
-      for dir in {{ homes_with_perms.stdout }};
-      do
-        chmod g-w,o-rwx $dir;
-      done
+- name: "6.2.5 | AUDIT | Ensure no duplicate UIDs exist"
+  block:
+      - name: "6.2.5 | AUDIT | Ensure no duplicate UIDs exist | Check for duplicate UIDs"
+        shell: "pwck -r | awk -F: '{if ($3 in uid) print $1 ; else uid[$3]}' /etc/passwd"
+        changed_when: false
+        failed_when: false
+        check_mode: false
+        register: ubuntu2004cis_6_2_5_user_uid_check
+
+      - name: "6.2.5 | AUDIT | Ensure no duplicate UIDs exist | Warn Count"
+        import_tasks:
+            file: warning_facts.yml
+        when: ubuntu2004cis_6_2_5_user_uid_check.stdout | length > 0
   when:
       - ubuntu2004cis_rule_6_2_5
-      - homes_with_perms.stdout | length > 0
   tags:
       - level1
-      - scored
-      - patch
+      - audit
       - rule_6.2.5
+      - user
 
-- name: "SCORED | 6.2.6 | PATCH | Ensure users own their home directories"
-  command: /bin/true
-  changed_when: false
+- name: "6.2.6 | AUDIT | Ensure no duplicate user names exist"
+  block:
+      - name: "6.2.6 | AUDIT | Ensure no duplicate user names exist | Check for duplicate User Names"
+        shell: "pwck -r | awk -F: '{if ($1 in users) print $1 ; else users[$1]}' /etc/passwd"
+        changed_when: false
+        failed_when: false
+        check_mode: false
+        register: ubuntu2004cis_6_2_6_user_username_check
+
+      - name: "6.2.6 | AUDIT | Ensure no duplicate user names exist | Print warning about users with duplicate User Names"
+        debug:
+            msg: "Warning!! The following user names are duplicates: {{ ubuntu2004cis_6_2_6_user_username_check.stdout_lines }}"
+        when: ubuntu2004cis_6_2_6_user_username_check.stdout | length > 0
   when:
       - ubuntu2004cis_rule_6_2_6
   tags:
       - level1
-      - scored
-      - patch
+      - audit
       - rule_6.2.6
-      - notimplemented
+      - user
 
-- name: "SCORED | 6.2.7 | PATCH | Ensure users' dot files are not group or world writable"
-  command: /bin/true
-  changed_when: false
+- name: "6.2.7 | AUDIT | Ensure no duplicate user names exist"
+  block:
+      - name: "6.2.7 | AUDIT | Ensure no duplicate user names exist | Check for duplicate User Names"
+        shell: "pwck -r | awk -F: '{if ($1 in users) print $1 ; else users[$1]}' /etc/passwd"
+        changed_when: false
+        failed_when: false
+        check_mode: false
+        register: ubuntu2004cis_6_2_7_user_username_check
+
+      - name: "6.2.7 | AUDIT | Ensure no duplicate user names exist | Print warning about users with duplicate User Names"
+        debug:
+            msg: "Warning!! The following user names are duplicates: {{ ubuntu2004cis_6_2_7_user_username_check.stdout_lines }}"
+        when: ubuntu2004cis_6_2_7_user_username_check.stdout | length > 0
   when:
       - ubuntu2004cis_rule_6_2_7
   tags:
       - level1
-      - scored
-      - patch
+      - audit
       - rule_6.2.7
-      - notimplemented
+      - user
 
-- name: "SCORED | 6.2.8 | PATCH | Ensure no users have .forward files"
-  file:
-      state: absent
-      dest: "~{{ item }}/.forward"
-  with_items: "{{ users.stdout_lines }}"
+- name: "6.2.8 | AUDIT | Ensure no duplicate group names exist"
+  block:
+      - name: "6.2.8 | AUDIT | Ensure no duplicate group names exist | Check for duplicate group names"
+        shell: 'getent passwd | cut -d: -f1 | sort -n | uniq -d'
+        changed_when: false
+        failed_when: false
+        check_mode: false
+        register: ubuntu2004cis_6_2_8_group_group_check
+
+      - name: "6.2.8 | AUDIT | Ensure no duplicate group names exist | Print warning about users with duplicate group names"
+        debug:
+            msg: "Warning!! The following group names are duplicates: {{ ubuntu2004cis_6_2_8_group_group_check.stdout_lines }}"
+        when: ubuntu2004cis_6_2_8_group_group_check.stdout | length > 0
   when:
       - ubuntu2004cis_rule_6_2_8
   tags:
       - level1
-      - scored
-      - patch
+      - audit
       - rule_6.2.8
+      - groups
 
-- name: "SCORED | 6.2.9 | PATCH | Ensure no users have .netrc files"
-  file:
-      state: absent
-      dest: "~{{ item }}/.netrc"
-  with_items: "{{ users.stdout_lines }}"
+- name: "6.2.9 | PATCH | Ensure root PATH Integrity"
+  block:
+      - name: "6.2.9 | AUDIT | Ensure root PATH Integrity | Determine empty value"
+        shell: 'echo $PATH | grep ::'
+        changed_when: false
+        failed_when: ubuntu2004cis_rule_6_2_9_path_colon.rc == 0
+        check_mode: false
+        register: ubuntu2004cis_rule_6_2_9_path_colon
+
+      - name: "6.2.9 | AUDIT | Ensure root PATH Integrity | Determin colon end"
+        shell: 'echo $PATH | grep :$'
+        changed_when: false
+        failed_when: ubuntu2004cis_rule_6_2_9_path_colon_end.rc == 0
+        check_mode: false
+        register: ubuntu2004cis_rule_6_2_9_path_colon_end
+
+      - name: "6.2.9 | AUDIT | Ensure root PATH Integrity | Determine dot in path"
+        shell: "/bin/bash --login -c 'env | grep ^PATH=' | sed -e 's/PATH=//' -e 's/::/:/' -e 's/:$//' -e 's/:/\\n/g'"
+        changed_when: false
+        failed_when: '"." in ubuntu2004cis_rule_6_2_9_dot_in_path.stdout_lines'
+        check_mode: false
+        register: ubuntu2004cis_rule_6_2_9_dot_in_path
+
+      - name: "6.2.9 | AUDIT | Ensure root PATH Integrity | Alert on empty value, colon end, and dot in path"
+        debug:
+            msg:
+                - "The following paths have an empty value: {{ ubuntu2004cis_rule_6_2_9_path_colon.stdout_lines }}"
+                - "The following paths have colon end: {{ ubuntu2004cis_rule_6_2_9_path_colon_end.stdout_lines }}"
+                - "The following paths have a dot in the path: {{ ubuntu2004cis_rule_6_2_9_dot_in_path.stdout_lines }}"
+
+      - name: "6.2.9 | PATCH | Ensure root PATH Integrity | Determine rights and owner"
+        file:
+            path: "{{ item }}"
+            follow: true
+            state: directory
+            owner: root
+            mode: 'o-w,g-w'
+        with_items: "{{ ubuntu2004cis_rule_6_2_9_dot_in_path.stdout_lines }}"
   when:
       - ubuntu2004cis_rule_6_2_9
   tags:
       - level1
-      - scored
       - patch
       - rule_6.2.9
+      - user
+      - root
+      - notimplemented
 
-- name: "SCORED | 6.2.10 | PATCH | Ensure users' .netrc Files are not group or world accessible"
-  command: /bin/true
-  changed_when: false
+- name: "6.2.10 | PATCH | Ensure root is the only UID 0 account"
+  block:
+      - name: "6.2.10 | AUDIT | Ensure root is the only UID 0 account | Get non-root users with UID of 0"
+        shell: awk -F":" '($3 == 0 && $1 != \"root\") {i++;print $1 }' /etc/passwd
+        changed_when: false
+        failed_when: false
+        check_mode: false
+        register: ubuntu2004cis_6_2_10_uid_0_notroot
+
+      - name: "6.2.10 | PATCH | Ensure root is the only UID 0 account | Lock UID 0 users"
+        user:
+            name: "{{ item }}"
+            password_lock: true
+        with_items:
+            - "{{ ubuntu2004cis_6_2_10_uid_0_notroot.stdout_lines }}"
+        when:
+                  - ubuntu2004cis_6_2_10_uid_0_notroot.stdout | length > 0
+
+      - name: "6.2.10 | AUDIT | Ensure root is the only UID 0 account | Alert about accounts disruption high"
+        debug:
+            msg:
+                - "Warning!! You have non-root users with a UID of 0 and ubuntu2004cis_disruption_high enabled"
+                - "This means the following accounts were password locked and will need to have the UID's manually adjusted"
+                - "{{ ubuntu2004cis_6_2_10_uid_0_notroot.stdout_lines }}"
+        when:
+                  - ubuntu2004cis_6_2_10_uid_0_notroot.stdout | length > 0
+      - name: "6.2.10 | AUDIT | Ensure root is the only UID 0 account | Alert about accounts disruption low"
+        debug:
+            msg:
+                - "Warning!! You have non-root users with a UID of 0 and ubtu18cis_disruption_high disabled"
+                - "This means no action was taken, you will need to have the UID's of the users below manually adjusted"
+                - "{{ ubuntu2004cis_6_2_10_uid_0_notroot.stdout_lines }}"
+        when:
+            - ubuntu2004cis_6_2_10_uid_0_notroot.stdout | length > 0
   when:
       - ubuntu2004cis_rule_6_2_10
   tags:
       - level1
       - scored
-      - patch
       - rule_6.2.10
-      - notimplemented
+      - user
+      - root
 
-- name: "SCORED | 6.2.11 | PATCH | Ensure no users have .rhosts files"
-  file:
-      state: absent
-      dest: "~{{ item }}/.rhosts"
-  with_items: "{{ users.stdout_lines }}"
+- name: "6.2.11 | PATCH | Ensure local interactive user home directories exist"
+  block:
+      - name: "6.2.11 | PATCH | Ensure local interactive user home directories exist | Create dir if absent"
+        file:
+            path: "{{ item.dir }}"
+            state: directory
+            owner: "{{ item.id }}"
+            group: "{{ item.gid }}"
+            mode: "0750"
+        register: ubuntu2004cis_6_2_11_home_dir
+        loop: "{{ ubuntu2004cis_passwd  | selectattr('uid', '>=', min_int_uid | int ) | selectattr('uid', '<=', max_int_uid | int ) | list }}"
+        loop_control:
+            label: "{{ item.id }}"
+
+      # set default ACLs so the homedir has an effective umask of 0027
+      - name: "6.2.11 | PATCH | Ensure local interactive user home directories exist | Set group ACL"
+        ansible.posix.acl:
+            path: "{{ item }}"
+            default: true
+            etype: group
+            permissions: rx
+            state: present
+        loop: "{{ interactive_users_home.stdout_lines }}"
+
+      - name: "6.2.11 | PATCH | Ensure local interactive user home directories exist | Set other ACL"
+        ansible.posix.acl:
+            path: "{{ item }}"
+            default: true
+            etype: other
+            permissions: 0
+            state: present
+        loop: "{{ interactive_users_home.stdout_lines }}"
   when:
       - ubuntu2004cis_rule_6_2_11
   tags:
       - level1
-      - scored
       - patch
+      - users
       - rule_6.2.11
 
-- name: "SCORED | 6.2.12 | PATCH | Ensure all groups in /etc/passwd exist in /etc/group"
-  command: /bin/true
-  changed_when: false
+- name: "6.2.12 | PATCH | Ensure local interactive user dot files access is configured"
+  block:
+      - name: "6.2.12 | AUDIT | Ensure local interactive user dot files access is configured | Check for dot files"
+        shell: find /home/ -name "\.*" -perm /g+w,o+w
+        changed_when: false
+        failed_when: false
+        check_mode: false
+        register: ubuntu2004cis_6_2_12_audit
+
+      - name: "6.2.12 | PATCH | Ensure local interactive user dot files access is configured | Changes files if dot configured"
+        file:
+            path: '{{ item }}'
+            mode: go-w
+        with_items: "{{ ubuntu2004cis_6_2_12_audit.stdout_lines }}"
+        when:
+            - ubuntu2004cis_6_2_12_audit.stdout | length > 0
+
+      - name: "6.2.12 | PATCH | Ensure local interactive user dot files access is configured | Ensure no users have .netrc files"
+        file:
+            dest: "~{{ item }}/.netrc"
+            state: absent
+        with_items:
+            - "{{ ubuntu2004cis_users.stdout_lines }}"
+
+      - name: "6.2.12 | PATCH | Ensure local interactive user dot files access is configured | Ensure no users have .forward files"
+        file:
+            dest: "~{{ item }}/.forward"
+            state: absent
+        with_items:
+            - "{{ ubuntu2004cis_users.stdout_lines }}"
+
+      - name: "6.2.12 | PATCH | Ensure local interactive user dot files access is configured | Ensure no users have .rhostfiles"
+        file:
+            dest: "~{{ item }}/.rhost"
+            state: absent
+        with_items:
+            - "{{ ubuntu2004cis_users.stdout_lines }}"
   when:
       - ubuntu2004cis_rule_6_2_12
   tags:
       - level1
-      - scored
       - patch
       - rule_6.2.12
-      - notimplemented
-
-- name: "SCORED | 6.2.13 | PATCH | Ensure no duplicate UIDs exist"
-  command: /bin/true
-  changed_when: false
-  when:
-      - ubuntu2004cis_rule_6_2_13
-  tags:
-      - level1
-      - scored
-      - patch
-      - rule_6.2.13
-      - notimplemented
-
-- name: "SCORED | 6.2.14 | PATCH | Ensure no duplicate GIDs exist"
-  command: /bin/true
-  changed_when: false
-  when:
-      - ubuntu2004cis_rule_6_2_14
-  tags:
-      - level1
-      - scored
-      - patch
-      - rule_6.2.14
-      - notimplemented
-
-- name: "SCORED | 6.2.15 | PATCH | Ensure no duplicate user names exist"
-  command: /bin/true
-  changed_when: false
-  when:
-      - ubuntu2004cis_rule_6_2_15
-  tags:
-      - level1
-      - scored
-      - patch
-      - rule_6.2.15
-      - notimplemented
-
-- name: "SCORED | 6.2.16 | PATCH | Ensure no duplicate group names exist"
-  command: /bin/true
-  changed_when: false
-  when:
-      - ubuntu2004cis_rule_6_2_16
-  tags:
-      - level1
-      - scored
-      - patch
-      - rule_6.2.16
-      - notimplemented
-
-- name: "SCORED | 6.2.17 | PATCH | Ensure shadow group is empty"
-  command: /bin/true
-  changed_when: false
-  when:
-      - ubuntu2004cis_rule_6_2_17
-  tags:
-      - level1
-      - scored
-      - patch
-      - rule_6.2.17
-      - notimplemented
+      - user
