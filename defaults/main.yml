@@ -26,76 +26,96 @@ ubuntu2004cis_rule_1_1_1_2: true
 ubuntu2004cis_rule_1_1_1_3: true
 ubuntu2004cis_rule_1_1_1_4: true
 ubuntu2004cis_rule_1_1_1_5: true
-ubuntu2004cis_rule_1_1_1_6: true
-ubuntu2004cis_rule_1_1_1_7: true
-ubuntu2004cis_rule_1_1_2: true
-ubuntu2004cis_rule_1_1_3: true
-ubuntu2004cis_rule_1_1_4: true
-ubuntu2004cis_rule_1_1_5: false
-ubuntu2004cis_rule_1_1_6: true
-ubuntu2004cis_rule_1_1_7: true
-ubuntu2004cis_rule_1_1_8: true
+
+ubuntu2004cis_rule_1_1_2_1: true
+ubuntu2004cis_rule_1_1_2_2: true
+ubuntu2004cis_rule_1_1_2_3: true
+ubuntu2004cis_rule_1_1_2_4: true
+
+ubuntu2004cis_rule_1_1_3_1: true
+ubuntu2004cis_rule_1_1_3_2: true
+ubuntu2004cis_rule_1_1_3_3: true
+
+ubuntu2004cis_rule_1_1_4_1: true
+ubuntu2004cis_rule_1_1_4_2: true
+ubuntu2004cis_rule_1_1_4_3: true
+ubuntu2004cis_rule_1_1_4_4: true
+
+ubuntu2004cis_rule_1_1_5_1: true
+ubuntu2004cis_rule_1_1_5_2: true
+ubuntu2004cis_rule_1_1_5_3: true
+ubuntu2004cis_rule_1_1_5_4: true
+
+ubuntu2004cis_rule_1_1_6_1: true
+ubuntu2004cis_rule_1_1_6_2: true
+ubuntu2004cis_rule_1_1_6_3: true
+ubuntu2004cis_rule_1_1_6_4: true
+
+ubuntu2004cis_rule_1_1_7_1: true
+ubuntu2004cis_rule_1_1_7_2: true
+ubuntu2004cis_rule_1_1_7_3: true
+
+ubuntu2004cis_rule_1_1_8_1: true
+ubuntu2004cis_rule_1_1_8_2: true
+ubuntu2004cis_rule_1_1_8_3: true
+
 ubuntu2004cis_rule_1_1_9: true
 ubuntu2004cis_rule_1_1_10: true
-ubuntu2004cis_rule_1_1_11: true
-ubuntu2004cis_rule_1_1_12: true
-ubuntu2004cis_rule_1_1_13: true
-ubuntu2004cis_rule_1_1_14: true
-ubuntu2004cis_rule_1_1_15: true
-ubuntu2004cis_rule_1_1_16: true
-ubuntu2004cis_rule_1_1_17: true
-ubuntu2004cis_rule_1_1_18: true
-ubuntu2004cis_rule_1_1_19: true
-ubuntu2004cis_rule_1_1_20: true
-ubuntu2004cis_rule_1_1_21: true
-ubuntu2004cis_rule_1_1_22: true
-ubuntu2004cis_rule_1_1_23: true
-ubuntu2004cis_rule_1_1_24: true
+
 ubuntu2004cis_rule_1_2_1: true
 ubuntu2004cis_rule_1_2_2: true
+
 ubuntu2004cis_rule_1_3_1: true
 ubuntu2004cis_rule_1_3_2: true
 ubuntu2004cis_rule_1_3_3: true
+
 ubuntu2004cis_rule_1_4_1: true
+ubuntu2004cis_rule_1_4_1_disable_password: true
 ubuntu2004cis_rule_1_4_2: true
+ubuntu2004cis_rule_1_4_3: true
+
 ubuntu2004cis_rule_1_5_1: true
-ubuntu2004cis_rule_1_5_1_disable_password: true
 ubuntu2004cis_rule_1_5_2: true
-ubuntu2004cis_rule_1_5_3: false
+ubuntu2004cis_rule_1_5_3: true
 ubuntu2004cis_rule_1_5_4: true
-ubuntu2004cis_rule_1_6_1: true
-ubuntu2004cis_rule_1_6_2: true
-ubuntu2004cis_rule_1_6_3: true
-ubuntu2004cis_rule_1_6_4: true
-ubuntu2004cis_rule_1_7_1_1: true
-ubuntu2004cis_rule_1_7_1_2: true
-ubuntu2004cis_rule_1_7_1_3: true
-ubuntu2004cis_rule_1_7_1_4: true
-ubuntu2004cis_rule_1_8_1_1: true
-ubuntu2004cis_rule_1_8_1_2: true
-ubuntu2004cis_rule_1_8_1_3: true
-ubuntu2004cis_rule_1_8_1_4: true
-ubuntu2004cis_rule_1_8_1_5: true
-ubuntu2004cis_rule_1_8_1_6: true
-ubuntu2004cis_rule_1_9: true
-ubuntu2004cis_rule_1_10: true
+ubuntu2004cis_rule_1_5_5: true
+
+ubuntu2004cis_rule_1_6_1_1: true
+ubuntu2004cis_rule_1_6_1_2: true
+ubuntu2004cis_rule_1_6_1_3: true
+ubuntu2004cis_rule_1_6_1_4: true
+
+ubuntu2004cis_rule_1_7_1: true
+ubuntu2004cis_rule_1_7_2: true
+ubuntu2004cis_rule_1_7_3: true
+ubuntu2004cis_rule_1_7_4: true
+ubuntu2004cis_rule_1_7_5: true
+ubuntu2004cis_rule_1_7_6: true
+
+ubuntu2004cis_rule_1_8_1: true
+ubuntu2004cis_rule_1_8_2: true
+ubuntu2004cis_rule_1_8_3: true
+ubuntu2004cis_rule_1_8_4: true
+ubuntu2004cis_rule_1_8_5: true
+ubuntu2004cis_rule_1_8_6: true
+ubuntu2004cis_rule_1_8_7: true
+ubuntu2004cis_rule_1_8_8: true
+ubuntu2004cis_rule_1_8_9: true
+ubuntu2004cis_rule_1_8_10: true
 
 # Section 2 rules
-ubuntu2004cis_rule_2_1_1: true
-ubuntu2004cis_rule_2_1_2: true
-ubuntu2004cis_rule_2_1_3: true
-ubuntu2004cis_rule_2_1_4: true
-ubuntu2004cis_rule_2_1_5: true
-ubuntu2004cis_rule_2_1_6: true
-ubuntu2004cis_rule_2_1_7: true
-ubuntu2004cis_rule_2_1_8: true
-ubuntu2004cis_rule_2_1_9: true
-ubuntu2004cis_rule_2_1_10: true
-ubuntu2004cis_rule_2_1_11: true
-ubuntu2004cis_rule_2_2_1_1: true
-ubuntu2004cis_rule_2_2_1_2: true
-ubuntu2004cis_rule_2_2_1_3: true
-ubuntu2004cis_rule_2_2_1_4: true
+ubuntu2004cis_rule_2_1_1_1: true
+ubuntu2004cis_rule_2_1_2_1: true
+ubuntu2004cis_rule_2_1_2_2: true
+ubuntu2004cis_rule_2_1_2_3: true
+ubuntu2004cis_rule_2_1_3_1: true
+ubuntu2004cis_rule_2_1_3_2: true
+ubuntu2004cis_rule_2_1_4_1: true
+ubuntu2004cis_rule_2_1_4_2: true
+ubuntu2004cis_rule_2_1_4_3: true
+ubuntu2004cis_rule_2_1_4_4: true
+
+ubuntu2004cis_rule_2_2_1: true
 ubuntu2004cis_rule_2_2_2: true
 ubuntu2004cis_rule_2_2_3: true
 ubuntu2004cis_rule_2_2_4: true
@@ -112,19 +132,28 @@ ubuntu2004cis_rule_2_2_14: true
 ubuntu2004cis_rule_2_2_15: true
 ubuntu2004cis_rule_2_2_16: true
 ubuntu2004cis_rule_2_2_17: true
+
 ubuntu2004cis_rule_2_3_1: true
 ubuntu2004cis_rule_2_3_2: true
 ubuntu2004cis_rule_2_3_3: true
 ubuntu2004cis_rule_2_3_4: true
 ubuntu2004cis_rule_2_3_5: true
 ubuntu2004cis_rule_2_3_6: true
+
 ubuntu2004cis_rule_2_4: true
 
 # Section 3 rules
 ubuntu2004cis_rule_3_1_1: true
 ubuntu2004cis_rule_3_1_2: true
+ubuntu2004cis_rule_3_1_3: true
+ubuntu2004cis_rule_3_1_4: true
+ubuntu2004cis_rule_3_1_5: true
+ubuntu2004cis_rule_3_1_6: true
+ubuntu2004cis_rule_3_1_7: true
+
 ubuntu2004cis_rule_3_2_1: true
 ubuntu2004cis_rule_3_2_2: true
+
 ubuntu2004cis_rule_3_3_1: true
 ubuntu2004cis_rule_3_3_2: true
 ubuntu2004cis_rule_3_3_3: true
@@ -134,47 +163,41 @@ ubuntu2004cis_rule_3_3_6: true
 ubuntu2004cis_rule_3_3_7: true
 ubuntu2004cis_rule_3_3_8: true
 ubuntu2004cis_rule_3_3_9: true
-ubuntu2004cis_rule_3_4_1: true
-ubuntu2004cis_rule_3_4_2: true
-ubuntu2004cis_rule_3_4_3: true
-ubuntu2004cis_rule_3_4_4: true
-ubuntu2004cis_rule_3_5_1_1: true
-ubuntu2004cis_rule_3_5_1_2: true
-ubuntu2004cis_rule_3_5_1_3: true
-ubuntu2004cis_rule_3_5_1_4: true
-ubuntu2004cis_rule_3_5_1_5: true
-ubuntu2004cis_rule_3_5_1_6: true
-ubuntu2004cis_rule_3_5_1_7: true
-ubuntu2004cis_rule_3_5_2_1: true
-ubuntu2004cis_rule_3_5_2_2: true
-ubuntu2004cis_rule_3_5_2_3: true
-ubuntu2004cis_rule_3_5_2_4: true
-ubuntu2004cis_rule_3_5_2_5: true
-ubuntu2004cis_rule_3_5_2_6: true
-ubuntu2004cis_rule_3_5_2_7: true
-ubuntu2004cis_rule_3_5_2_8: true
-ubuntu2004cis_rule_3_5_2_9: true
-ubuntu2004cis_rule_3_5_2_10: true
-ubuntu2004cis_rule_3_5_3_1_1: true
-ubuntu2004cis_rule_3_5_3_1_2: true
-ubuntu2004cis_rule_3_5_3_1_3: true
-ubuntu2004cis_rule_3_5_3_2_1: true
-ubuntu2004cis_rule_3_5_3_2_2: true
-ubuntu2004cis_rule_3_5_3_2_3: true
-ubuntu2004cis_rule_3_5_3_2_4: true
-ubuntu2004cis_rule_3_5_3_3_1: true
-ubuntu2004cis_rule_3_5_3_3_2: true
-ubuntu2004cis_rule_3_5_3_3_3: true
-ubuntu2004cis_rule_3_5_3_3_4: true
+
+ubuntu2004cis_rule_3_4_1_1: true
+ubuntu2004cis_rule_3_4_1_2: true
+ubuntu2004cis_rule_3_4_1_3: true
+ubuntu2004cis_rule_3_4_1_4: true
+ubuntu2004cis_rule_3_4_1_5: true
+ubuntu2004cis_rule_3_4_1_6: true
+ubuntu2004cis_rule_3_4_1_7: true
+
+ubuntu2004cis_rule_3_4_2_1: true
+ubuntu2004cis_rule_3_4_2_2: true
+ubuntu2004cis_rule_3_4_2_3: true
+ubuntu2004cis_rule_3_4_2_4: true
+ubuntu2004cis_rule_3_4_2_5: true
+ubuntu2004cis_rule_3_4_2_6: true
+ubuntu2004cis_rule_3_4_2_7: true
+ubuntu2004cis_rule_3_4_2_8: true
+ubuntu2004cis_rule_3_4_2_9: true
+ubuntu2004cis_rule_3_4_2_10: true
+
+ubuntu2004cis_rule_3_4_3_1_1: true
+ubuntu2004cis_rule_3_4_3_1_2: true
+ubuntu2004cis_rule_3_4_3_1_3: true
+ubuntu2004cis_rule_3_4_3_2_1: true
+ubuntu2004cis_rule_3_4_3_2_2: true
+ubuntu2004cis_rule_3_4_3_2_3: true
+ubuntu2004cis_rule_3_4_3_2_4: true
+ubuntu2004cis_rule_3_4_3_3_1: true
+ubuntu2004cis_rule_3_4_3_3_2: true
+ubuntu2004cis_rule_3_4_3_3_3: true
+ubuntu2004cis_rule_3_4_3_3_4: true
 
 # Section 4 rules
-ubuntu2004cis_rule_4_1_1_1: true
-ubuntu2004cis_rule_4_1_1_2: true
-ubuntu2004cis_rule_4_1_1_3: true
-ubuntu2004cis_rule_4_1_1_4: true
-ubuntu2004cis_rule_4_1_2_1: true
-ubuntu2004cis_rule_4_1_2_2: true
-ubuntu2004cis_rule_4_1_2_3: true
+ubuntu2004cis_rule_4_1_1: true
+ubuntu2004cis_rule_4_1_2: true
 ubuntu2004cis_rule_4_1_3: true
 ubuntu2004cis_rule_4_1_4: true
 ubuntu2004cis_rule_4_1_5: true
@@ -182,74 +205,124 @@ ubuntu2004cis_rule_4_1_6: true
 ubuntu2004cis_rule_4_1_7: true
 ubuntu2004cis_rule_4_1_8: true
 ubuntu2004cis_rule_4_1_9: true
-ubuntu2004cis_rule_4_1_10: true
-ubuntu2004cis_rule_4_1_11: true
-ubuntu2004cis_rule_4_1_12: true
-ubuntu2004cis_rule_4_1_13: true
-ubuntu2004cis_rule_4_1_14: true
-ubuntu2004cis_rule_4_1_15: true
-ubuntu2004cis_rule_4_1_16: true
-ubuntu2004cis_rule_4_1_17: true
-ubuntu2004cis_rule_4_2_1_1: true
-ubuntu2004cis_rule_4_2_1_2: true
-ubuntu2004cis_rule_4_2_1_3: true
-ubuntu2004cis_rule_4_2_1_4: true
-ubuntu2004cis_rule_4_2_1_5: true
-ubuntu2004cis_rule_4_2_1_6: true
-ubuntu2004cis_rule_4_2_2_1: true
-ubuntu2004cis_rule_4_2_2_2: true
-ubuntu2004cis_rule_4_2_2_3: true
+
+ubuntu2004cis_rule_4_2_1: true
+ubuntu2004cis_rule_4_2_2: true
 ubuntu2004cis_rule_4_2_3: true
-ubuntu2004cis_rule_4_3: true
-ubuntu2004cis_rule_4_4: true
+ubuntu2004cis_rule_4_2_4: true
+ubuntu2004cis_rule_4_2_5: true
+ubuntu2004cis_rule_4_2_6: true
+ubuntu2004cis_rule_4_2_7: true
+ubuntu2004cis_rule_4_2_8: true
+ubuntu2004cis_rule_4_2_9: true
+ubuntu2004cis_rule_4_2_10: true
+ubuntu2004cis_rule_4_2_11: true
+ubuntu2004cis_rule_4_2_12: true
+ubuntu2004cis_rule_4_2_13: true
+ubuntu2004cis_rule_4_2_14: true
+ubuntu2004cis_rule_4_2_15: true
+ubuntu2004cis_rule_4_2_16: true
+ubuntu2004cis_rule_4_2_17: true
+ubuntu2004cis_rule_4_2_18: true
+ubuntu2004cis_rule_4_2_19: true
+ubuntu2004cis_rule_4_2_20: true
+ubuntu2004cis_rule_4_2_21: true
+ubuntu2004cis_rule_4_2_22: true
+
+ubuntu2004cis_rule_4_3_1: true
+ubuntu2004cis_rule_4_3_2: true
+ubuntu2004cis_rule_4_3_3: true
+ubuntu2004cis_rule_4_3_4: true
+ubuntu2004cis_rule_4_3_5: true
+ubuntu2004cis_rule_4_3_6: true
+ubuntu2004cis_rule_4_3_7: true
+
+ubuntu2004cis_rule_4_4_1: true
+ubuntu2004cis_rule_4_4_2: true
+ubuntu2004cis_rule_4_4_3: true
+ubuntu2004cis_rule_4_4_4: true
+ubuntu2004cis_rule_4_4_5: true
+
+ubuntu2004cis_rule_4_5_1_1: true
+ubuntu2004cis_rule_4_5_1_2: true
+ubuntu2004cis_rule_4_5_1_3: true
+ubuntu2004cis_rule_4_5_1_4: true
+ubuntu2004cis_rule_4_5_1_5: true
+ubuntu2004cis_rule_4_5_1_6: true
+ubuntu2004cis_rule_4_5_1_7: true
+
+ubuntu2004cis_rule_4_5_2: true
+ubuntu2004cis_rule_4_5_3: true
+ubuntu2004cis_rule_4_5_4: true
+ubuntu2004cis_rule_4_5_5: true
+ubuntu2004cis_rule_4_5_6: true
+ubuntu2004cis_rule_4_5_7: true
 
 # Section 5 rules
-ubuntu2004cis_rule_5_1_1: true
-ubuntu2004cis_rule_5_1_2: true
+ubuntu2004cis_rule_5_1_1_1_1: true
+ubuntu2004cis_rule_5_1_1_1_2: true
+ubuntu2004cis_rule_5_1_1_1_3: true
+ubuntu2004cis_rule_5_1_1_1_4: true
+
+ubuntu2004cis_rule_5_1_1_2: true
+ubuntu2004cis_rule_5_1_1_3: true
+ubuntu2004cis_rule_5_1_1_4: true
+ubuntu2004cis_rule_5_1_1_5: true
+ubuntu2004cis_rule_5_1_1_6: true
+ubuntu2004cis_rule_5_1_1_7: true
+
+ubuntu2004cis_rule_5_1_2_1: true
+ubuntu2004cis_rule_5_1_2_2: true
+ubuntu2004cis_rule_5_1_2_3: true
+ubuntu2004cis_rule_5_1_2_4: true
+ubuntu2004cis_rule_5_1_2_5: true
+ubuntu2004cis_rule_5_1_2_6: true
+ubuntu2004cis_rule_5_1_2_7: true
+
 ubuntu2004cis_rule_5_1_3: true
-ubuntu2004cis_rule_5_1_4: true
-ubuntu2004cis_rule_5_1_5: true
-ubuntu2004cis_rule_5_1_6: true
-ubuntu2004cis_rule_5_1_7: true
-ubuntu2004cis_rule_5_1_8: true
-ubuntu2004cis_rule_5_1_9: true
-ubuntu2004cis_rule_5_2_1: true
-ubuntu2004cis_rule_5_2_2: true
-ubuntu2004cis_rule_5_2_3: true
-ubuntu2004cis_rule_5_2_4: true
-ubuntu2004cis_rule_5_2_5: true
-ubuntu2004cis_rule_5_2_6: true
-ubuntu2004cis_rule_5_2_7: true
-ubuntu2004cis_rule_5_2_8: true
-ubuntu2004cis_rule_5_2_9: true
-ubuntu2004cis_rule_5_2_10: true
-ubuntu2004cis_rule_5_2_11: true
-ubuntu2004cis_rule_5_2_12: true
-ubuntu2004cis_rule_5_2_13: true
-ubuntu2004cis_rule_5_2_14: true
-ubuntu2004cis_rule_5_2_15: true
-ubuntu2004cis_rule_5_2_16: true
-ubuntu2004cis_rule_5_2_17: true
-ubuntu2004cis_rule_5_2_18: true
-ubuntu2004cis_rule_5_2_19: true
-ubuntu2004cis_rule_5_2_20: true
-ubuntu2004cis_rule_5_2_21: true
-ubuntu2004cis_rule_5_2_22: true
-ubuntu2004cis_rule_5_3_1: true
-ubuntu2004cis_rule_5_3_2: true
-ubuntu2004cis_rule_5_3_3: true
-ubuntu2004cis_rule_5_3_4: true
-ubuntu2004cis_rule_5_4_1_1: true
-ubuntu2004cis_rule_5_4_1_2: true
-ubuntu2004cis_rule_5_4_1_3: true
-ubuntu2004cis_rule_5_4_1_4: true
-ubuntu2004cis_rule_5_4_1_5: true
-ubuntu2004cis_rule_5_4_2: true
-ubuntu2004cis_rule_5_4_3: true
-ubuntu2004cis_rule_5_4_4: true
-ubuntu2004cis_rule_5_4_5: true
-ubuntu2004cis_rule_5_5: true
-ubuntu2004cis_rule_5_6: false
+
+ubuntu2004cis_rule_5_2_1_1: true
+ubuntu2004cis_rule_5_2_1_2: true
+ubuntu2004cis_rule_5_2_1_3: true
+ubuntu2004cis_rule_5_2_1_4: true
+
+ubuntu2004cis_rule_5_2_2_1: true
+ubuntu2004cis_rule_5_2_2_2: true
+ubuntu2004cis_rule_5_2_2_3: true
+
+ubuntu2004cis_rule_5_2_3_1: true
+ubuntu2004cis_rule_5_2_3_2: true
+ubuntu2004cis_rule_5_2_3_3: true
+ubuntu2004cis_rule_5_2_3_4: true
+ubuntu2004cis_rule_5_2_3_5: true
+ubuntu2004cis_rule_5_2_3_6: true
+ubuntu2004cis_rule_5_2_3_7: true
+ubuntu2004cis_rule_5_2_3_8: true
+ubuntu2004cis_rule_5_2_3_9: true
+ubuntu2004cis_rule_5_2_3_10: true
+ubuntu2004cis_rule_5_2_3_11: true
+ubuntu2004cis_rule_5_2_3_12: true
+ubuntu2004cis_rule_5_2_3_13: true
+ubuntu2004cis_rule_5_2_3_14: true
+ubuntu2004cis_rule_5_2_3_15: true
+ubuntu2004cis_rule_5_2_3_16: true
+ubuntu2004cis_rule_5_2_3_17: true
+ubuntu2004cis_rule_5_2_3_18: true
+ubuntu2004cis_rule_5_2_3_19: true
+ubuntu2004cis_rule_5_2_3_20: true
+ubuntu2004cis_rule_5_2_3_21: true
+
+ubuntu2004cis_rule_5_2_4_1: true
+ubuntu2004cis_rule_5_2_4_2: true
+ubuntu2004cis_rule_5_2_4_3: true
+ubuntu2004cis_rule_5_2_4_4: true
+ubuntu2004cis_rule_5_2_4_5: true
+ubuntu2004cis_rule_5_2_4_6: true
+ubuntu2004cis_rule_5_2_4_7: true
+ubuntu2004cis_rule_5_2_4_8: true
+ubuntu2004cis_rule_5_2_4_9: true
+ubuntu2004cis_rule_5_2_4_10: true
+ubuntu2004cis_rule_5_2_4_11: true
 
 # Section 6 rules
 ubuntu2004cis_rule_6_1_1: true
@@ -265,7 +338,7 @@ ubuntu2004cis_rule_6_1_10: true
 ubuntu2004cis_rule_6_1_11: true
 ubuntu2004cis_rule_6_1_12: true
 ubuntu2004cis_rule_6_1_13: true
-ubuntu2004cis_rule_6_1_14: true
+
 ubuntu2004cis_rule_6_2_1: true
 ubuntu2004cis_rule_6_2_2: true
 ubuntu2004cis_rule_6_2_3: true
@@ -278,11 +351,6 @@ ubuntu2004cis_rule_6_2_9: true
 ubuntu2004cis_rule_6_2_10: true
 ubuntu2004cis_rule_6_2_11: true
 ubuntu2004cis_rule_6_2_12: true
-ubuntu2004cis_rule_6_2_13: true
-ubuntu2004cis_rule_6_2_14: true
-ubuntu2004cis_rule_6_2_15: true
-ubuntu2004cis_rule_6_2_16: true
-ubuntu2004cis_rule_6_2_17: true
 
 # Service configuration booleans set true to keep service
 ubuntu2004cis_avahi_server: false
@@ -307,7 +375,7 @@ ubuntu2004cis_named_server: false
 ubuntu2004cis_nfs_rpc_server: false
 ubuntu2004cis_is_mail_server: false
 ubuntu2004cis_allow_autofs: false
-
+ubuntu2004cis_dnsmasq_server: false
 # xinetd required
 ubuntu2004cis_xinetd_required: false
 
@@ -317,7 +385,7 @@ ubuntu2004cis_rhnsd_required: false
 # 1.4.2 Bootloader password
 ubuntu2004cis_bootloader_password: random
 ubuntu2004cis_set_boot_pass: false
-
+ubuntu2004cis_root_password: true
 # System network parameters (host only OR host and router)
 ubuntu2004cis_is_router: false
 
@@ -354,21 +422,24 @@ ubuntu2004cis_rpc_required: false
 ubuntu2004cis_time_synchronization: chrony
 # ubuntu2004cis_time_synchronization: ntp
 
-ubuntu2004cis_time_synchronization_servers:
-  - uri: "0.pool.ntp.org"
-    config: "minpoll 8"
-  - uri: "1.pool.ntp.org"
-    config: "minpoll 8"
-  - uri: "2.pool.ntp.org"
-    config: "minpoll 8"
-  - uri: "3.pool.ntp.org"
-    config: "minpoll 8"
+# Time settings used for all versions
+ubuntu2004cis_time_pool:
+    - name: time.nist.gov
+      options: iburst maxsources 4
+
+ubuntu2004cis_time_servers:
+    - name: time-a-g.nist.gov
+      options: iburst
+    - name: time-b-g.nist.gov
+      options: iburst
+    - name: time-c-g.nist.gov
+      options: iburst
 
 # 3.3 TCP Wrappers
 ubuntu2004cis_setup_tcp_wrappers: false
 
-ubuntu2004cis_firewall: firewalld
-# ubuntu2004cis_firewall: iptables
+#ubuntu2004cis_firewall: firewalld
+ubuntu2004cis_firewall: iptables
 # ubuntu2004cis_firewall: ufw
 # ubuntu2004cis_firewall: nftables
 
@@ -378,6 +449,8 @@ ubuntu2004cis_nftables_table: filter
 ubuntu2004cis_firewall_services:
   - ssh
   - dhcpv6-client
+
+ubuntu2004cis_install_network_manager: false
 
 # Warning Banner Content (issue, issue.net, motd)
 ubuntu2004cis_warning_banner: |
@@ -393,22 +466,26 @@ ubuntu2004cis_auditd:
 
 ubuntu2004cis_logrotate: "daily"
 
+ubuntu2004cis_sudo_timestamp_timeout: 15
+ubuntu2004cis_sugroup: nosugroup
+
 ## Section 5 Vars
 ubuntu2004cis_at_allow_users: []
 ubuntu2004cis_cron_allow_users: []
 
 ubuntu2004cis_sshd:
-  clientalivecountmax: 3
-  clientaliveinterval: 300
-  ciphers: "chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr"
-  macs: "hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,umac-128@openssh.com"
-  kexalgorithms: "curve25519-sha256,curve25519-sha256@libssh.org,diffie-hellman-group14-sha256,diffie-hellman-group16-sha512,diffie-hellman-group18-sha512,ecdh-sha2-nistp521,ecdh-sha2-nistp384,ecdh-sha2-nistp256,diffie-hellman-group-exchange-sha256"
-  logingracetime: 60
-  ### Make sure you understand the precedence when working with these values!!
-  # allowusers:
-  # allowgroups: systems dba
-  # denyusers:
-  # denygroups:
+    log_level: "INFO"
+    max_auth_tries: 4
+    ciphers: "chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr"
+    macs: "hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512,hmac-sha2-256"
+    kex_algorithms: "curve25519-sha256,curve25519-sha256@libssh.org,diffie-hellman-group14-sha256,diffie-hellman-group16-sha512,diffie-hellman-group18-sha512,ecdh-sha2-nistp521,ecdh-sha2-nistp384,ecdh-sha2-nistp256,diffie-hellman-group-exchange-sha256"
+    client_alive_interval: 300
+    client_alive_count_max: 3
+    login_grace_time: 60
+    max_sessions: 4
+    # WARNING: make sure you understand the precedence when working with these values!!
+    allow_users: "vagrant ubuntu"
+    allow_groups: "vagrant ubuntu"
 
 ubuntu2004cis_pwquality:
   - key: 'minlen'
@@ -428,6 +505,8 @@ ubuntu2004cis_pass:
   warn_age: 7
   inactive: 30
   history: 5
+  character_changed: 5
+  max_repeat_letters: 3
 
 ubuntu2004cis_password_change_date_in_future_action: expire # lock
 
@@ -439,7 +518,7 @@ ubuntu2004cis_syslog: rsyslog
 ubuntu2004cis_vartmp:
   source: /tmp
   fstype: false
-  opts: "defaults, nodev, nosuid, noexec, bind"
+  opts: "defaults, rw, nosuid, nodev, noexec, realtime 0 0"
   enabled: false
 
 # Apply upgrades (set to false if another patching system is in place)
@@ -475,7 +554,7 @@ tmp_mount_file:
   Debian: /usr/share/systemd/tmp.mount
 tmp_mount_options:
   RedHat: mode=1777,strictatime,noexec,nodev,nosuid
-  Debian: mode=1777,strictatime,nodev,nosuid
+  Debian: mode=1777,strictatime,noexec,nodev,nosuid
 chrony_config_file:
   RedHat: /etc/chrony.conf
   Debian: /etc/chrony/chrony.conf
@@ -485,3 +564,37 @@ chrony_system_user:
 
 ### Firewall
 ubuntu2004cis_setup_firewall: false
+
+ubuntu2004cis_journal_upload:
+    remote_url:
+    serverkeyfile:
+    servercertfile:
+    trustfile:
+
+ubuntu2004cis_journald_log_rotate:
+    systemmaxuse:
+    systemkeepfree:
+    runtimemaxuse:
+    runtimekeepfree:
+    maxfilesec:
+
+# Setting to true will remove all world-writable permissions, and false will leave as-is
+ubuntu2004cis_no_world_write_adjust: true
+
+# ubuntu2004cis_un_owned_owner is the owner to set files to that have no owner
+ubuntu2004cis_unowned_owner: root
+
+# true will give the owner from ubuntu2004cis_un_owned_owner to all unowned files/directories and false will skip
+ubuntu2004cis_no_owner_adjust: true
+
+# ubuntu2004cis_ungrouped_group is the group to set files to that have no group
+ubuntu2004cis_ungrouped_group: root
+
+# true will give the group from ubuntu2004cis_un_owned_group to all ungrouped files/directories and false will skip
+ubuntu2004cis_no_group_adjust: true
+
+# Set to true this role will remove that bit, set to false we will just warn about the files
+ubuntu2004cis_suid_adjust: true
+
+# Set to true this role will remove that bit, set to false we will just warn about the files
+ubuntu2004cis_sgid_adjust: true
